@@ -1,6 +1,4 @@
-#summary One-sentence summary of this page.
-
-= Introduction =
+#summary Getting Started
 
 = Details =
 
@@ -14,7 +12,7 @@ apt-get install libcv-dev libcvaux-dev libhighgui-dev
 
 The build instructions:
 
-    bzr branch http://benlau.e-fever.org/projects/bzr/rvtk rvtk
+{{{    bzr branch http://benlau.e-fever.org/projects/bzr/rvtk rvtk
 
     cd librvtk
 
@@ -25,31 +23,33 @@ The build instructions:
     make
     make install
 
+}}}
+
 There are two demo applications available. The first one is a video viewer with two dialogs to choose the input video device and set the properties respectively. The other one is a face detection program from the sample code of OpenCV project.
 
+{{{
     /tmp/usr/bin/v4l2-demo
     /tmp/usr/bin/facedetect
+}}}
 
 The library is still under development. The API may change for new version. Therefore, only static link libraries are provided.
 
 API Doc:
 
+{{{
     http://benlau.e-fever.org/projects/docs/librvtk-vc/index.html
     http://benlau.e-fever.org/projects/docs/librvtk-opencv/index.html
+}}}
 
-Tested Camera :
+Tested Devices :
 
-    KWorld DVD Marker [em28xx]
-
-    Logitech Quickcam Pro 4000 [PWC] -  The PWC do not support to adjust FPS by standard V4L2 API
-
-    Logitech Quickcam Pro for Notebooks[UVC] - The driver supports MJPEG and YUYV for output. If chosen YUYV, only 1024×576 is provided.
-
-    Pinnacle DVC 90 [em28xx] - mmap fails in streaming I/O
+ *   KWorld DVD Marker [em28xx]
+ *  Logitech Quickcam Pro 4000 [PWC] -  The PWC do not support to adjust FPS by standard V4L2 API
+ *  Logitech Quickcam Pro for Notebooks[UVC] - The driver supports MJPEG and YUYV for output. If chosen YUYV, only 1024×576 is provided.
+ *   Pinnacle DVC 90 [em28xx] - mmap fails in streaming I/O
 
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
   * Headings, paragraphs, and lists
   * Automatic links to other wiki pages
-
