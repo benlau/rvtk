@@ -36,11 +36,9 @@ There are two demo applications available. The first one is a video viewer with 
 The library is still under development. The API may change for new version. Therefore, only static link libraries are provided.
 
 API Doc:
+ *  http://benlau.e-fever.org/projects/docs/librvtk-vc/index.html
+ *  http://benlau.e-fever.org/projects/docs/librvtk-opencv/index.html
 
-{{{
-    http://benlau.e-fever.org/projects/docs/librvtk-vc/index.html
-    http://benlau.e-fever.org/projects/docs/librvtk-opencv/index.html
-}}}
 
 Tested Devices :
 
