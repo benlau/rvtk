@@ -12,7 +12,8 @@ apt-get install libcv-dev libcvaux-dev libhighgui-dev
 
 The build instructions:
 
-{{{    bzr branch http://benlau.e-fever.org/projects/bzr/rvtk rvtk
+{{{  
+  bzr branch http://benlau.e-fever.org/projects/bzr/rvtk rvtk
 
     cd librvtk
 
