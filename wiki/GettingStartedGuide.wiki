@@ -20,7 +20,7 @@ The build instructions:
     aclocal
     automake
     autoconf
-    ./configure –prefix=/tmp/usr # for testing
+    ./configure --prefix=/tmp/usr # for testing
     make
     make install
 
@@ -46,9 +46,3 @@ Tested Devices :
  *  Logitech Quickcam Pro 4000 [PWC] -  The PWC do not support to adjust FPS by standard V4L2 API
  *  Logitech Quickcam Pro for Notebooks[UVC] - The driver supports MJPEG and YUYV for output. If chosen YUYV, only 1024×576 is provided.
  *   Pinnacle DVC 90 [em28xx] - mmap fails in streaming I/O
-
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
