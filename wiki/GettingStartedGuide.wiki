@@ -13,17 +13,20 @@ apt-get install libcv-dev libcvaux-dev libhighgui-dev
 The build instructions:
 
 {{{  
-  bzr branch http://benlau.e-fever.org/projects/bzr/rvtk rvtk
 
-    cd rvtk
+bzr branch http://benlau.e-fever.org/projects/bzr/rvtk rvtk
 
-    aclocal
-    automake
-    autoconf
-    ./configure --prefix=/tmp/usr # for testing
-    make
-    make install
+cd rvtk
+./autogen.sh --prefix=/tmp/usr # for testing
+make
+make install
 
+}}}
+
+Build Debian package
+{{{
+cd rvtk
+dpkg-buildpackage -rfakeroot -us -uc -i\.bzr
 }}}
 
 There are two demo applications available. The first one is a video viewer with two dialogs to choose the input video device and set the properties respectively. The other one is a face detection program from the sample code of OpenCV project.
@@ -44,7 +47,8 @@ API Doc:
 
 Tested Devices :
 
- *   KWorld DVD Marker [em28xx]
+ *  KWorld DVD Marker [em28xx] 
+ *  Pinnacle DVC 90 [em28xx]
+ * A 4-input unbanded capture card [bttv] - Burst must be turnned on in order to get 25fps
  *  Logitech Quickcam Pro 4000 [PWC] -  The PWC do not support to adjust FPS by standard V4L2 API
  *  Logitech Quickcam Pro for Notebooks[UVC] - The driver supports MJPEG and YUYV for output. If chosen YUYV, only 1024×576 is provided.
- *   Pinnacle DVC 90 [em28xx] - mmap fails in streaming I/O
