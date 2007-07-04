@@ -26,6 +26,8 @@ make install
 Build Debian package
 {{{
 cd rvtk
+./autogen.sh
+make docs  #pre-build the document. It may report error when making gtk document. Simply ignore it.
 dpkg-buildpackage -rfakeroot -us -uc -i\.bzr
 }}}
 
