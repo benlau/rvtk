@@ -47,8 +47,8 @@ API Doc:
 
 Tested Devices :
 
- *  KWorld DVD Marker [em28xx] 
- *  Pinnacle DVC 90 [em28xx]
- * A 4-input unbanded capture card [bttv] - Burst must be turnned on in order to get 25fps
- *  Logitech Quickcam Pro 4000 [PWC] -  The PWC do not support to adjust FPS by standard V4L2 API
- *  Logitech Quickcam Pro for Notebooks[UVC] - The driver supports MJPEG and YUYV for output. If chosen YUYV, only 1024×576 is provided.
+ * KWorld DVD Marker (em28xx)
+ *  Pinnacle DVC 90 (em28xx)
+ *  A 4-input unbanded capture card (bttv) - Burst must be turnned on in order to get 25fps
+ *  Logitech Quickcam Pro 4000 (PWC) -  The PWC do not support to adjust FPS by standard V4L2 API
+ *  Logitech Quickcam Pro for Notebooks(UVC) - The driver supports MJPEG and YUYV for output. If chosen YUYV, only 1024×576 is provided.
