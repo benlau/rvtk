@@ -33,7 +33,7 @@ There are two demo applications available. The first one is a video viewer with 
     /tmp/usr/bin/facedetect
 }}}
 
-<img src=images/Screenshot-facedetect.png>
+http://rvtk.googlecode.com/svn/wiki/images/Screenshot-facedetect.png
 
 The library is still under development. The API may change for new version. Therefore, only static link libraries are provided.
 
