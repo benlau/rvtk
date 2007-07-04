@@ -1,4 +1,4 @@
-#summary Getting Started
+﻿#summary Getting Started
 
 = Details =
 
@@ -32,6 +32,8 @@ There are two demo applications available. The first one is a video viewer with 
     /tmp/usr/bin/v4l2-demo
     /tmp/usr/bin/facedetect
 }}}
+
+<img src=images/Screenshot-facedetect.png>
 
 The library is still under development. The API may change for new version. Therefore, only static link libraries are provided.
 
