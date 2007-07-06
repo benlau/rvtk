@@ -12,7 +12,7 @@ The package of OpenCV has been available in Debian Etch/SID, they could be insta
 apt-get install libcv-dev libcvaux-dev libhighgui-dev
 }}}
 
-The source code is held by Bazaar , a distributed version control system , instead of the Subversion system provided by Google Code. The packages should be available for most distribution :  http://bazaar-vcs.org/Download
+The source code is held by Bazaar , a distributed version control system , instead of the Subversion system provided by Google Code. You must have Bazaar be installed in order to retrieve the source code. The packages should be available for most distribution :  http://bazaar-vcs.org/Download
 
 The build instructions:
 
