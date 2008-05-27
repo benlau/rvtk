@@ -18,7 +18,7 @@ The build instructions:
 
 {{{  
 
-bzr branch http://benlau.e-fever.org/projects/bzr/rvtk rvtk
+bzr branch https://code.launchpad.net/~benlau/rvtk/trunk rvtk
 
 cd rvtk
 ./autogen.sh --prefix=/tmp/usr # for testing
