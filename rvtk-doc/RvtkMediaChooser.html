@@ -1,0 +1,278 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RvtkMediaChooser</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Rvtk Reference Manual">
+<link rel="up" href="ch02.html" title="Rvtk Widgets">
+<link rel="prev" href="RvtkWidgetGallery.html" title="Gallery">
+<link rel="next" href="RvtkVideoTuning.html" title="RvtkVideoTuning">
+<meta name="generator" content="GTK-Doc V1.10 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="Rvtk Core">
+<link rel="chapter" href="ch02.html" title="Rvtk Widgets">
+<link rel="chapter" href="ch03.html" title="libv4l2">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RvtkWidgetGallery.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rvtk Reference Manual</th>
+<td><a accesskey="n" href="RvtkVideoTuning.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#RvtkMediaChooser.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RvtkMediaChooser.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RvtkMediaChooser.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RvtkMediaChooser.implemented-interfaces" class="shortcut">Implemented Interfaces</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="RvtkMediaChooser"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RvtkMediaChooser.top_of_page"></a>RvtkMediaChooser</span></h2>
+<p>RvtkMediaChooser</p>
+</td>
+<td valign="top" align="right"><img src="RvtkMediaChooser.png"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RvtkMediaChooser.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a class="link" href="RvtkMediaChooser.html#RVTK-MEDIA-CHOOSER-CONST:CAPS" title="RVTK_MEDIA_CHOOSER_CONST()">RVTK_MEDIA_CHOOSER_CONST</a>            (obj)
+                    <a class="link" href="RvtkMediaChooser.html#RvtkMediaChooserPrivate" title="RvtkMediaChooserPrivate">RvtkMediaChooserPrivate</a>;
+                    <a class="link" href="RvtkMediaChooser.html#RvtkMediaChooser-struct" title="RvtkMediaChooser">RvtkMediaChooser</a>;
+<a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a>*          <a class="link" href="RvtkMediaChooser.html#rvtk-media-chooser-new" title="rvtk_media_chooser_new ()">rvtk_media_chooser_new</a>              (void);
+void                <a class="link" href="RvtkMediaChooser.html#rvtk-media-chooser-unref" title="rvtk_media_chooser_unref ()">rvtk_media_chooser_unref</a>            (<a class="link" href="RvtkMediaChooser.html" title="RvtkMediaChooser">RvtkMediaChooser</a> *self);
+gboolean            <a class="link" href="RvtkMediaChooser.html#rvtk-media-chooser-is-selected-video-device" title="rvtk_media_chooser_is_selected_video_device ()">rvtk_media_chooser_is_selected_video_device</a>
+                                                        (<a class="link" href="RvtkMediaChooser.html" title="RvtkMediaChooser">RvtkMediaChooser</a> *self);
+gchar*              <a class="link" href="RvtkMediaChooser.html#rvtk-media-chooser-get-selected" title="rvtk_media_chooser_get_selected ()">rvtk_media_chooser_get_selected</a>     (<a class="link" href="RvtkMediaChooser.html" title="RvtkMediaChooser">RvtkMediaChooser</a> *self);
+int                 <a class="link" href="RvtkMediaChooser.html#rvtk-media-chooser-scan-devices" title="rvtk_media_chooser_scan_devices ()">rvtk_media_chooser_scan_devices</a>     (<a class="link" href="RvtkMediaChooser.html" title="RvtkMediaChooser">RvtkMediaChooser</a> *self);
+gint                <a class="link" href="RvtkMediaChooser.html#rvtk-media-chooser-run" title="rvtk_media_chooser_run ()">rvtk_media_chooser_run</a>              (<a class="link" href="RvtkMediaChooser.html" title="RvtkMediaChooser">RvtkMediaChooser</a> *self);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkMediaChooser.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkObject.html"
+>GtkObject</a>
+               +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a>
+                     +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkContainer.html"
+>GtkContainer</a>
+                           +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkBox.html"
+>GtkBox</a>
+                                 +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkVBox.html"
+>GtkVBox</a>
+                                       +----RvtkMediaChooser
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkMediaChooser.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RvtkMediaChooser implements
+ AtkImplementorIface and  <a
+href="/usr/share/gtk-doc/html/gtk/gtk-gtkbuildable.html#GtkBuildable"
+>GtkBuildable</a>.</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkMediaChooser.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkMediaChooser.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="RVTK-MEDIA-CHOOSER-CONST:CAPS"></a><h3>RVTK_MEDIA_CHOOSER_CONST()</h3>
+<pre class="programlisting">#define RVTK_MEDIA_CHOOSER_CONST(obj)	G_TYPE_CHECK_INSTANCE_CAST((obj), rvtk_media_chooser_get_type(), RvtkMediaChooser const)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RvtkMediaChooserPrivate"></a><h3>RvtkMediaChooserPrivate</h3>
+<pre class="programlisting">typedef struct _RvtkMediaChooserPrivate RvtkMediaChooserPrivate;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RvtkMediaChooser-struct"></a><h3>RvtkMediaChooser</h3>
+<pre class="programlisting">typedef struct _RvtkMediaChooser RvtkMediaChooser;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-media-chooser-new"></a><h3>rvtk_media_chooser_new ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a>*          rvtk_media_chooser_new              (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-media-chooser-unref"></a><h3>rvtk_media_chooser_unref ()</h3>
+<pre class="programlisting">void                rvtk_media_chooser_unref            (<a class="link" href="RvtkMediaChooser.html" title="RvtkMediaChooser">RvtkMediaChooser</a> *self);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-media-chooser-is-selected-video-device"></a><h3>rvtk_media_chooser_is_selected_video_device ()</h3>
+<pre class="programlisting">gboolean            rvtk_media_chooser_is_selected_video_device
+                                                        (<a class="link" href="RvtkMediaChooser.html" title="RvtkMediaChooser">RvtkMediaChooser</a> *self);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-media-chooser-get-selected"></a><h3>rvtk_media_chooser_get_selected ()</h3>
+<pre class="programlisting">gchar*              rvtk_media_chooser_get_selected     (<a class="link" href="RvtkMediaChooser.html" title="RvtkMediaChooser">RvtkMediaChooser</a> *self);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-media-chooser-scan-devices"></a><h3>rvtk_media_chooser_scan_devices ()</h3>
+<pre class="programlisting">int                 rvtk_media_chooser_scan_devices     (<a class="link" href="RvtkMediaChooser.html" title="RvtkMediaChooser">RvtkMediaChooser</a> *self);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-media-chooser-run"></a><h3>rvtk_media_chooser_run ()</h3>
+<pre class="programlisting">gint                rvtk_media_chooser_run              (<a class="link" href="RvtkMediaChooser.html" title="RvtkMediaChooser">RvtkMediaChooser</a> *self);</pre>
+<p>
+Construct a dialog then append RvtkMediaChooser to be its child.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td> RvtkMediaChooser
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> Response ID
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.10</div>
+</body>
+</html>

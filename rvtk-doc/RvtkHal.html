@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RvtkHal</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Rvtk Reference Manual">
+<link rel="up" href="ch01.html" title="Rvtk Core">
+<link rel="prev" href="rvtk-rvtkmap.html" title="rvtkmap">
+<link rel="next" href="ch02.html" title="Rvtk Widgets">
+<meta name="generator" content="GTK-Doc V1.10 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="Rvtk Core">
+<link rel="chapter" href="ch02.html" title="Rvtk Widgets">
+<link rel="chapter" href="ch03.html" title="libv4l2">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="rvtk-rvtkmap.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rvtk Reference Manual</th>
+<td><a accesskey="n" href="ch02.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#RvtkHal.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RvtkHal.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RvtkHal.object-hierarchy" class="shortcut">Object Hierarchy</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="RvtkHal"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RvtkHal.top_of_page"></a>RvtkHal</span></h2>
+<p>RvtkHal — Abstract Layer of system resource</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RvtkHal.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+
+#include &lt;rvtk/rvtk.h&gt;
+
+                    <a class="link" href="RvtkHal.html#RvtkHal-struct" title="RvtkHal">RvtkHal</a>;
+<a class="link" href="RvtkHal.html" title="RvtkHal">RvtkHal</a>*            <a class="link" href="RvtkHal.html#rvtk-hal-new" title="rvtk_hal_new ()">rvtk_hal_new</a>                        ();
+int                 <a class="link" href="RvtkHal.html#rvtk-hal-scan" title="rvtk_hal_scan ()">rvtk_hal_scan</a>                       (<a class="link" href="RvtkHal.html" title="RvtkHal">RvtkHal</a> *hal);
+RvtkMap*            <a class="link" href="RvtkHal.html#rvtk-hal-get-device-capacity" title="rvtk_hal_get_device_capacity ()">rvtk_hal_get_device_capacity</a>        (<a class="link" href="RvtkHal.html" title="RvtkHal">RvtkHal</a> *hal,
+                                                         unsigned int index);
+int                 <a class="link" href="RvtkHal.html#rvtk-hal-get-device-count" title="rvtk_hal_get_device_count ()">rvtk_hal_get_device_count</a>           (<a class="link" href="RvtkHal.html" title="RvtkHal">RvtkHal</a> *hal);
+RvtkMap*            <a class="link" href="RvtkHal.html#rvtk-hal-query-capacity" title="rvtk_hal_query_capacity ()">rvtk_hal_query_capacity</a>             (const gchar *uri,
+                                                         GError **error);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkHal.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----RvtkHal
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkHal.description"></a><h2>Description</h2>
+<p>
+Abstract Layer of system resource</p>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkHal.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="RvtkHal-struct"></a><h3>RvtkHal</h3>
+<pre class="programlisting">typedef struct _RvtkHal RvtkHal;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-hal-new"></a><h3>rvtk_hal_new ()</h3>
+<pre class="programlisting"><a class="link" href="RvtkHal.html" title="RvtkHal">RvtkHal</a>*            rvtk_hal_new                        ();</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-hal-scan"></a><h3>rvtk_hal_scan ()</h3>
+<pre class="programlisting">int                 rvtk_hal_scan                       (<a class="link" href="RvtkHal.html" title="RvtkHal">RvtkHal</a> *hal);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hal</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-hal-get-device-capacity"></a><h3>rvtk_hal_get_device_capacity ()</h3>
+<pre class="programlisting">RvtkMap*            rvtk_hal_get_device_capacity        (<a class="link" href="RvtkHal.html" title="RvtkHal">RvtkHal</a> *hal,
+                                                         unsigned int index);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hal</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>index</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-hal-get-device-count"></a><h3>rvtk_hal_get_device_count ()</h3>
+<pre class="programlisting">int                 rvtk_hal_get_device_count           (<a class="link" href="RvtkHal.html" title="RvtkHal">RvtkHal</a> *hal);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>hal</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-hal-query-capacity"></a><h3>rvtk_hal_query_capacity ()</h3>
+<pre class="programlisting">RvtkMap*            rvtk_hal_query_capacity             (const gchar *uri,
+                                                         GError **error);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.10</div>
+</body>
+</html>

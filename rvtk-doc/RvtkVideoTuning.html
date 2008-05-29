@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RvtkVideoTuning</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Rvtk Reference Manual">
+<link rel="up" href="ch02.html" title="Rvtk Widgets">
+<link rel="prev" href="RvtkMediaChooser.html" title="RvtkMediaChooser">
+<link rel="next" href="RvtkCanvas.html" title="RvtkCanvas">
+<meta name="generator" content="GTK-Doc V1.10 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="Rvtk Core">
+<link rel="chapter" href="ch02.html" title="Rvtk Widgets">
+<link rel="chapter" href="ch03.html" title="libv4l2">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RvtkMediaChooser.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rvtk Reference Manual</th>
+<td><a accesskey="n" href="RvtkCanvas.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#RvtkVideoTuning.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RvtkVideoTuning.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RvtkVideoTuning.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RvtkVideoTuning.implemented-interfaces" class="shortcut">Implemented Interfaces</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="RvtkVideoTuning"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RvtkVideoTuning.top_of_page"></a>RvtkVideoTuning</span></h2>
+<p>RvtkVideoTuning</p>
+</td>
+<td valign="top" align="right"><img src="RvtkVideoTuning.png"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RvtkVideoTuning.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a class="link" href="RvtkVideoTuning.html#RVTK-VIDEO-TUNING-CONST:CAPS" title="RVTK_VIDEO_TUNING_CONST()">RVTK_VIDEO_TUNING_CONST</a>             (obj)
+                    <a class="link" href="RvtkVideoTuning.html#RvtkVideoTuningPrivate" title="RvtkVideoTuningPrivate">RvtkVideoTuningPrivate</a>;
+                    <a class="link" href="RvtkVideoTuning.html#RvtkVideoTuning-struct" title="RvtkVideoTuning">RvtkVideoTuning</a>;
+<a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a>*          <a class="link" href="RvtkVideoTuning.html#rvtk-video-tuning-new" title="rvtk_video_tuning_new ()">rvtk_video_tuning_new</a>               (void);
+void                <a class="link" href="RvtkVideoTuning.html#rvtk-video-tuning-unref" title="rvtk_video_tuning_unref ()">rvtk_video_tuning_unref</a>             (<a class="link" href="RvtkVideoTuning.html" title="RvtkVideoTuning">RvtkVideoTuning</a> *self);
+<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a>*        <a class="link" href="RvtkVideoTuning.html#rvtk-video-tuning-load" title="rvtk_video_tuning_load ()">rvtk_video_tuning_load</a>              (<a class="link" href="RvtkVideoTuning.html" title="RvtkVideoTuning">RvtkVideoTuning</a> *self,
+                                                         const char *source);
+void                <a class="link" href="RvtkVideoTuning.html#rvtk-video-tuning-apply" title="rvtk_video_tuning_apply ()">rvtk_video_tuning_apply</a>             (<a class="link" href="RvtkVideoTuning.html" title="RvtkVideoTuning">RvtkVideoTuning</a> *self);
+gint                <a class="link" href="RvtkVideoTuning.html#rvtk-video-tuning-run" title="rvtk_video_tuning_run ()">rvtk_video_tuning_run</a>               (<a class="link" href="RvtkVideoTuning.html" title="RvtkVideoTuning">RvtkVideoTuning</a> *self);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkVideoTuning.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkObject.html"
+>GtkObject</a>
+               +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a>
+                     +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkContainer.html"
+>GtkContainer</a>
+                           +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkBox.html"
+>GtkBox</a>
+                                 +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkVBox.html"
+>GtkVBox</a>
+                                       +----RvtkVideoTuning
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkVideoTuning.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RvtkVideoTuning implements
+ AtkImplementorIface and  <a
+href="/usr/share/gtk-doc/html/gtk/gtk-gtkbuildable.html#GtkBuildable"
+>GtkBuildable</a>.</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkVideoTuning.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkVideoTuning.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="RVTK-VIDEO-TUNING-CONST:CAPS"></a><h3>RVTK_VIDEO_TUNING_CONST()</h3>
+<pre class="programlisting">#define RVTK_VIDEO_TUNING_CONST(obj)	G_TYPE_CHECK_INSTANCE_CAST((obj), rvtk_video_tuning_get_type(), RvtkVideoTuning const)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RvtkVideoTuningPrivate"></a><h3>RvtkVideoTuningPrivate</h3>
+<pre class="programlisting">typedef struct _RvtkVideoTuningPrivate RvtkVideoTuningPrivate;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RvtkVideoTuning-struct"></a><h3>RvtkVideoTuning</h3>
+<pre class="programlisting">typedef struct _RvtkVideoTuning RvtkVideoTuning;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-video-tuning-new"></a><h3>rvtk_video_tuning_new ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a>*          rvtk_video_tuning_new               (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-video-tuning-unref"></a><h3>rvtk_video_tuning_unref ()</h3>
+<pre class="programlisting">void                rvtk_video_tuning_unref             (<a class="link" href="RvtkVideoTuning.html" title="RvtkVideoTuning">RvtkVideoTuning</a> *self);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-video-tuning-load"></a><h3>rvtk_video_tuning_load ()</h3>
+<pre class="programlisting"><a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a>*        rvtk_video_tuning_load              (<a class="link" href="RvtkVideoTuning.html" title="RvtkVideoTuning">RvtkVideoTuning</a> *self,
+                                                         const char *source);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>source</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-video-tuning-apply"></a><h3>rvtk_video_tuning_apply ()</h3>
+<pre class="programlisting">void                rvtk_video_tuning_apply             (<a class="link" href="RvtkVideoTuning.html" title="RvtkVideoTuning">RvtkVideoTuning</a> *self);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-video-tuning-run"></a><h3>rvtk_video_tuning_run ()</h3>
+<pre class="programlisting">gint                rvtk_video_tuning_run               (<a class="link" href="RvtkVideoTuning.html" title="RvtkVideoTuning">RvtkVideoTuning</a> *self);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.10</div>
+</body>
+</html>

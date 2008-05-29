@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="Rvtk Reference Manual" link="index.html" author="" name="rvtk">
+  <chapters>
+    <sub name="Rvtk Core" link="ch01.html">
+      <sub name="rvtkmap" link="rvtk-rvtkmap.html"/>
+      <sub name="RvtkHal" link="RvtkHal.html"/>
+    </sub>
+    <sub name="Rvtk Widgets" link="ch02.html">
+      <sub name="Gallery" link="RvtkWidgetGallery.html"/>
+      <sub name="RvtkMediaChooser" link="RvtkMediaChooser.html"/>
+      <sub name="RvtkVideoTuning" link="RvtkVideoTuning.html"/>
+      <sub name="RvtkCanvas" link="RvtkCanvas.html"/>
+      <sub name="RvtkGridPoints" link="RvtkGridPoints.html"/>
+      <sub name="RvtkViewFinder" link="RvtkViewFinder.html"/>
+    </sub>
+    <sub name="libv4l2" link="ch03.html">
+      <sub name="drv-v4l2" link="rvtk-drv-v4l2.html"/>
+      <sub name="fourcc" link="rvtk-fourcc.html"/>
+      <sub name="frame" link="rvtk-frame.html"/>
+      <sub name="utils" link="rvtk-utils.html"/>
+      <sub name="yuv2rgb" link="rvtk-yuv2rgb.html"/>
+      <sub name="ui" link="rvtk-ui.html"/>
+      <sub name="cvutils" link="rvtk-cvutils.html"/>
+    </sub>
+  </chapters>
+  <functions>
+    <function name="rvtk_map_new ()" link="rvtk-rvtkmap.html#rvtk-map-new"/>
+    <function name="rvtk_map_free ()" link="rvtk-rvtkmap.html#rvtk-map-free"/>
+    <function name="rvtk_map_get_key_list ()" link="rvtk-rvtkmap.html#rvtk-map-get-key-list"/>
+    <function name="rvtk_map_set_value ()" link="rvtk-rvtkmap.html#rvtk-map-set-value"/>
+    <function name="rvtk_map_get_value ()" link="rvtk-rvtkmap.html#rvtk-map-get-value"/>
+    <function name="rvtk_map_set_string ()" link="rvtk-rvtkmap.html#rvtk-map-set-string"/>
+    <function name="rvtk_map_get_string ()" link="rvtk-rvtkmap.html#rvtk-map-get-string"/>
+    <function name="rvtk_map_set_int ()" link="rvtk-rvtkmap.html#rvtk-map-set-int"/>
+    <function name="rvtk_map_get_int ()" link="rvtk-rvtkmap.html#rvtk-map-get-int"/>
+    <function name="rvtk_map_set_strv ()" link="rvtk-rvtkmap.html#rvtk-map-set-strv"/>
+    <function name="rvtk_map_get_strv ()" link="rvtk-rvtkmap.html#rvtk-map-get-strv"/>
+    <function name="rvtk_map_to_text ()" link="rvtk-rvtkmap.html#rvtk-map-to-text"/>
+    <function name="RvtkHal" link="RvtkHal.html#RvtkHal-struct"/>
+    <function name="rvtk_hal_new ()" link="RvtkHal.html#rvtk-hal-new"/>
+    <function name="rvtk_hal_scan ()" link="RvtkHal.html#rvtk-hal-scan"/>
+    <function name="rvtk_hal_get_device_capacity ()" link="RvtkHal.html#rvtk-hal-get-device-capacity"/>
+    <function name="rvtk_hal_get_device_count ()" link="RvtkHal.html#rvtk-hal-get-device-count"/>
+    <function name="rvtk_hal_query_capacity ()" link="RvtkHal.html#rvtk-hal-query-capacity"/>
+    <function name="RVTK_MEDIA_CHOOSER_CONST()" link="RvtkMediaChooser.html#RVTK-MEDIA-CHOOSER-CONST:CAPS"/>
+    <function name="RvtkMediaChooserPrivate" link="RvtkMediaChooser.html#RvtkMediaChooserPrivate"/>
+    <function name="RvtkMediaChooser" link="RvtkMediaChooser.html#RvtkMediaChooser-struct"/>
+    <function name="rvtk_media_chooser_new ()" link="RvtkMediaChooser.html#rvtk-media-chooser-new"/>
+    <function name="rvtk_media_chooser_unref ()" link="RvtkMediaChooser.html#rvtk-media-chooser-unref"/>
+    <function name="rvtk_media_chooser_is_selected_video_device ()" link="RvtkMediaChooser.html#rvtk-media-chooser-is-selected-video-device"/>
+    <function name="rvtk_media_chooser_get_selected ()" link="RvtkMediaChooser.html#rvtk-media-chooser-get-selected"/>
+    <function name="rvtk_media_chooser_scan_devices ()" link="RvtkMediaChooser.html#rvtk-media-chooser-scan-devices"/>
+    <function name="rvtk_media_chooser_run ()" link="RvtkMediaChooser.html#rvtk-media-chooser-run"/>
+    <function name="RVTK_VIDEO_TUNING_CONST()" link="RvtkVideoTuning.html#RVTK-VIDEO-TUNING-CONST:CAPS"/>
+    <function name="RvtkVideoTuningPrivate" link="RvtkVideoTuning.html#RvtkVideoTuningPrivate"/>
+    <function name="RvtkVideoTuning" link="RvtkVideoTuning.html#RvtkVideoTuning-struct"/>
+    <function name="rvtk_video_tuning_new ()" link="RvtkVideoTuning.html#rvtk-video-tuning-new"/>
+    <function name="rvtk_video_tuning_unref ()" link="RvtkVideoTuning.html#rvtk-video-tuning-unref"/>
+    <function name="rvtk_video_tuning_load ()" link="RvtkVideoTuning.html#rvtk-video-tuning-load"/>
+    <function name="rvtk_video_tuning_apply ()" link="RvtkVideoTuning.html#rvtk-video-tuning-apply"/>
+    <function name="rvtk_video_tuning_run ()" link="RvtkVideoTuning.html#rvtk-video-tuning-run"/>
+    <function name="RVTK_CANVAS_CONST()" link="RvtkCanvas.html#RVTK-CANVAS-CONST:CAPS"/>
+    <function name="RvtkCanvasPrivate" link="RvtkCanvas.html#RvtkCanvasPrivate"/>
+    <function name="RvtkCanvas" link="RvtkCanvas.html#RvtkCanvas-struct"/>
+    <function name="rvtk_canvas_frame_size_changed ()" link="RvtkCanvas.html#rvtk-canvas-frame-size-changed"/>
+    <function name="rvtk_canvas_new ()" link="RvtkCanvas.html#rvtk-canvas-new"/>
+    <function name="rvtk_canvas_draw_pixbuf ()" link="RvtkCanvas.html#rvtk-canvas-draw-pixbuf"/>
+    <function name="rvtk_canvas_draw_frame ()" link="RvtkCanvas.html#rvtk-canvas-draw-frame"/>
+    <function name="rvtk_canvas_copy_area ()" link="RvtkCanvas.html#rvtk-canvas-copy-area"/>
+    <function name="rvtk_canvas_put ()" link="RvtkCanvas.html#rvtk-canvas-put"/>
+    <function name="rvtk_canvas_move ()" link="RvtkCanvas.html#rvtk-canvas-move"/>
+    <function name="rvtk_canvas_connect__frame_size_changed()" link="RvtkCanvas.html#rvtk-canvas-connect--frame-size-changed"/>
+    <function name="rvtk_canvas_connect_after__frame_size_changed()" link="RvtkCanvas.html#rvtk-canvas-connect-after--frame-size-changed"/>
+    <function name="rvtk_canvas_connect_data__frame_size_changed()" link="RvtkCanvas.html#rvtk-canvas-connect-data--frame-size-changed"/>
+    <function name="RVTK_CANVAS_PROP_SCALABLE()" link="RvtkCanvas.html#RVTK-CANVAS-PROP-SCALABLE:CAPS"/>
+    <function name="RVTK_CANVAS_GET_PROP_SCALABLE()" link="RvtkCanvas.html#RVTK-CANVAS-GET-PROP-SCALABLE:CAPS"/>
+    <function name="RVTK_CANVAS_PROP_FRAME_WIDTH()" link="RvtkCanvas.html#RVTK-CANVAS-PROP-FRAME-WIDTH:CAPS"/>
+    <function name="RVTK_CANVAS_GET_PROP_FRAME_WIDTH()" link="RvtkCanvas.html#RVTK-CANVAS-GET-PROP-FRAME-WIDTH:CAPS"/>
+    <function name="RVTK_CANVAS_PROP_FRAME_HEIGHT()" link="RvtkCanvas.html#RVTK-CANVAS-PROP-FRAME-HEIGHT:CAPS"/>
+    <function name="RVTK_CANVAS_GET_PROP_FRAME_HEIGHT()" link="RvtkCanvas.html#RVTK-CANVAS-GET-PROP-FRAME-HEIGHT:CAPS"/>
+    <function name="The &quot;frame-height&quot; property" link="RvtkCanvas.html#RvtkCanvas--frame-height"/>
+    <function name="The &quot;frame-width&quot; property" link="RvtkCanvas.html#RvtkCanvas--frame-width"/>
+    <function name="The &quot;scalable&quot; property" link="RvtkCanvas.html#RvtkCanvas--scalable"/>
+    <function name="The &quot;frame-size-changed&quot; signal" link="RvtkCanvas.html#RvtkCanvas-frame-size-changed"/>
+    <function name="RVTK_GRID_POINTS_CONST()" link="RvtkGridPoints.html#RVTK-GRID-POINTS-CONST:CAPS"/>
+    <function name="RvtkGridPointsPrivate" link="RvtkGridPoints.html#RvtkGridPointsPrivate"/>
+    <function name="RvtkGridPoints" link="RvtkGridPoints.html#RvtkGridPoints-struct"/>
+    <function name="rvtk_grid_points_new ()" link="RvtkGridPoints.html#rvtk-grid-points-new"/>
+    <function name="rvtk_grid_points_unref ()" link="RvtkGridPoints.html#rvtk-grid-points-unref"/>
+    <function name="rvtk_grid_points_set_grid_point ()" link="RvtkGridPoints.html#rvtk-grid-points-set-grid-point"/>
+    <function name="rvtk_grid_points_get_active_point ()" link="RvtkGridPoints.html#rvtk-grid-points-get-active-point"/>
+    <function name="rvtk_grid_points_set_active_point ()" link="RvtkGridPoints.html#rvtk-grid-points-set-active-point"/>
+    <function name="rvtk_grid_points_next_active_point ()" link="RvtkGridPoints.html#rvtk-grid-points-next-active-point"/>
+    <function name="rvtk_grid_points_revert_active_point ()" link="RvtkGridPoints.html#rvtk-grid-points-revert-active-point"/>
+    <function name="rvtk_grid_points_set_highlight ()" link="RvtkGridPoints.html#rvtk-grid-points-set-highlight"/>
+    <function name="RVTK_GRID_POINTS_PROP_GRID_POINT()" link="RvtkGridPoints.html#RVTK-GRID-POINTS-PROP-GRID-POINT:CAPS"/>
+    <function name="RVTK_GRID_POINTS_GET_PROP_GRID_POINT()" link="RvtkGridPoints.html#RVTK-GRID-POINTS-GET-PROP-GRID-POINT:CAPS"/>
+    <function name="RVTK_GRID_POINTS_PROP_ACTIVE_POINT()" link="RvtkGridPoints.html#RVTK-GRID-POINTS-PROP-ACTIVE-POINT:CAPS"/>
+    <function name="RVTK_GRID_POINTS_GET_PROP_ACTIVE_POINT()" link="RvtkGridPoints.html#RVTK-GRID-POINTS-GET-PROP-ACTIVE-POINT:CAPS"/>
+    <function name="The &quot;active-point&quot; property" link="RvtkGridPoints.html#RvtkGridPoints--active-point"/>
+    <function name="The &quot;grid-point&quot; property" link="RvtkGridPoints.html#RvtkGridPoints--grid-point"/>
+    <function name="RVTK_VIEW_FINDER_CONST()" link="RvtkViewFinder.html#RVTK-VIEW-FINDER-CONST:CAPS"/>
+    <function name="RvtkViewFinderPrivate" link="RvtkViewFinder.html#RvtkViewFinderPrivate"/>
+    <function name="RvtkViewFinder" link="RvtkViewFinder.html#RvtkViewFinder-struct"/>
+    <function name="rvtk_view_finder_new ()" link="RvtkViewFinder.html#rvtk-view-finder-new"/>
+    <function name="rvtk_view_finder_set_size ()" link="RvtkViewFinder.html#rvtk-view-finder-set-size"/>
+    <function name="rvtk_view_finder_get_size ()" link="RvtkViewFinder.html#rvtk-view-finder-get-size"/>
+    <function name="rvtk_view_finder_get_view_region ()" link="RvtkViewFinder.html#rvtk-view-finder-get-view-region"/>
+    <function name="rvtk_view_finder_copy_area_from_canvas ()" link="RvtkViewFinder.html#rvtk-view-finder-copy-area-from-canvas"/>
+    <function name="RVTK_VIEW_FINDER_PROP_WIDTH()" link="RvtkViewFinder.html#RVTK-VIEW-FINDER-PROP-WIDTH:CAPS"/>
+    <function name="RVTK_VIEW_FINDER_GET_PROP_WIDTH()" link="RvtkViewFinder.html#RVTK-VIEW-FINDER-GET-PROP-WIDTH:CAPS"/>
+    <function name="RVTK_VIEW_FINDER_PROP_HEIGHT()" link="RvtkViewFinder.html#RVTK-VIEW-FINDER-PROP-HEIGHT:CAPS"/>
+    <function name="RVTK_VIEW_FINDER_GET_PROP_HEIGHT()" link="RvtkViewFinder.html#RVTK-VIEW-FINDER-GET-PROP-HEIGHT:CAPS"/>
+    <function name="The &quot;height&quot; property" link="RvtkViewFinder.html#RvtkViewFinder--height"/>
+    <function name="The &quot;width&quot; property" link="RvtkViewFinder.html#RvtkViewFinder--width"/>
+    <function name="V4L2Capture" link="rvtk-drv-v4l2.html#V4L2Capture"/>
+    <function name="v4l2CaptureOpen ()" link="rvtk-drv-v4l2.html#v4l2CaptureOpen"/>
+    <function name="v4l2CaptureQueryFrame ()" link="rvtk-drv-v4l2.html#v4l2CaptureQueryFrame"/>
+    <function name="v4l2CaptureStartStreaming ()" link="rvtk-drv-v4l2.html#v4l2CaptureStartStreaming"/>
+    <function name="v4l2CaputreStopStreaming ()" link="rvtk-drv-v4l2.html#v4l2CaputreStopStreaming"/>
+    <function name="v4l2CaptureRelease ()" link="rvtk-drv-v4l2.html#v4l2CaptureRelease"/>
+    <function name="v4l2CaptureSetLog ()" link="rvtk-drv-v4l2.html#v4l2CaptureSetLog"/>
+    <function name="v4l2CaputreGetName ()" link="rvtk-drv-v4l2.html#v4l2CaputreGetName"/>
+    <function name="v4l2CaputreGetLocation ()" link="rvtk-drv-v4l2.html#v4l2CaputreGetLocation"/>
+    <function name="v4l2CaptureGetDriver ()" link="rvtk-drv-v4l2.html#v4l2CaptureGetDriver"/>
+    <function name="v4l2CaptureQueryResolutionsList ()" link="rvtk-drv-v4l2.html#v4l2CaptureQueryResolutionsList"/>
+    <function name="v4l2CaptureGetImageFormat ()" link="rvtk-drv-v4l2.html#v4l2CaptureGetImageFormat"/>
+    <function name="v4l2CaptureSetImageFormat ()" link="rvtk-drv-v4l2.html#v4l2CaptureSetImageFormat"/>
+    <function name="v4l2CaptureAutoSetImageFormat ()" link="rvtk-drv-v4l2.html#v4l2CaptureAutoSetImageFormat"/>
+    <function name="v4l2CaptureGetResolution ()" link="rvtk-drv-v4l2.html#v4l2CaptureGetResolution"/>
+    <function name="v4l2CaptureSetResolution ()" link="rvtk-drv-v4l2.html#v4l2CaptureSetResolution"/>
+    <function name="v4l2CaptureGetFPS ()" link="rvtk-drv-v4l2.html#v4l2CaptureGetFPS"/>
+    <function name="v4l2CaptureSetFPS ()" link="rvtk-drv-v4l2.html#v4l2CaptureSetFPS"/>
+    <function name="v4l2CaptureGetChannelsList ()" link="rvtk-drv-v4l2.html#v4l2CaptureGetChannelsList"/>
+    <function name="v4l2CaptureGetNormsList ()" link="rvtk-drv-v4l2.html#v4l2CaptureGetNormsList"/>
+    <function name="v4l2CaptureGetImageFormatsList ()" link="rvtk-drv-v4l2.html#v4l2CaptureGetImageFormatsList"/>
+    <function name="v4l2CaptureSetChannel ()" link="rvtk-drv-v4l2.html#v4l2CaptureSetChannel"/>
+    <function name="v4l2CaptureGetChannel ()" link="rvtk-drv-v4l2.html#v4l2CaptureGetChannel"/>
+    <function name="v4l2CaptureSetNorm ()" link="rvtk-drv-v4l2.html#v4l2CaptureSetNorm"/>
+    <function name="v4l2CaptureGetNorm ()" link="rvtk-drv-v4l2.html#v4l2CaptureGetNorm"/>
+    <function name="FOURCC()" link="rvtk-fourcc.html#FOURCC:CAPS"/>
+    <function name="fourcc_t" link="rvtk-fourcc.html#fourcc-t"/>
+    <function name="vidFourccToString ()" link="rvtk-fourcc.html#vidFourccToString"/>
+    <function name="vidFourccCalcFrameSize ()" link="rvtk-fourcc.html#vidFourccCalcFrameSize"/>
+    <function name="VidSize" link="rvtk-frame.html#VidSize"/>
+    <function name="VidFrame" link="rvtk-frame.html#VidFrame"/>
+    <function name="vidFrameCreate ()" link="rvtk-frame.html#vidFrameCreate"/>
+    <function name="vidFrameRef ()" link="rvtk-frame.html#vidFrameRef"/>
+    <function name="vidFrameUnref ()" link="rvtk-frame.html#vidFrameUnref"/>
+    <function name="vidFrameRelease ()" link="rvtk-frame.html#vidFrameRelease"/>
+    <function name="vidFrameModify ()" link="rvtk-frame.html#vidFrameModify"/>
+    <function name="vidFrameCache ()" link="rvtk-frame.html#vidFrameCache"/>
+    <function name="vidFrameChangeFormat ()" link="rvtk-frame.html#vidFrameChangeFormat"/>
+    <function name="vidFrameGetWidth ()" link="rvtk-frame.html#vidFrameGetWidth"/>
+    <function name="vidFrameGetHeight ()" link="rvtk-frame.html#vidFrameGetHeight"/>
+    <function name="vidFrameGetImageLength ()" link="rvtk-frame.html#vidFrameGetImageLength"/>
+    <function name="vidFrameGetBufferLength ()" link="rvtk-frame.html#vidFrameGetBufferLength"/>
+    <function name="vidFrameGetImageData ()" link="rvtk-frame.html#vidFrameGetImageData"/>
+    <function name="vidFrameGetFormat ()" link="rvtk-frame.html#vidFrameGetFormat"/>
+    <function name="vidFrameResizeBuffer ()" link="rvtk-frame.html#vidFrameResizeBuffer"/>
+    <function name="vidFrameGetRowStride ()" link="rvtk-frame.html#vidFrameGetRowStride"/>
+    <function name="vidFrameCopy ()" link="rvtk-frame.html#vidFrameCopy"/>
+    <function name="vidFrameClone ()" link="rvtk-frame.html#vidFrameClone"/>
+    <function name="v4l2ConvFunc ()" link="rvtk-frame.html#v4l2ConvFunc"/>
+    <function name="VidConv" link="rvtk-frame.html#VidConv"/>
+    <function name="vidConvFind ()" link="rvtk-frame.html#vidConvFind"/>
+    <function name="vidConvProcess ()" link="rvtk-frame.html#vidConvProcess"/>
+    <function name="enum RvtkLogLevel" link="rvtk-utils.html#RvtkLogLevel"/>
+    <function name="rvtk_log ()" link="rvtk-utils.html#rvtk-log"/>
+    <function name="yuv420_to_rgb24 ()" link="rvtk-yuv2rgb.html#yuv420-to-rgb24"/>
+    <function name="yuv420_to_bgr24 ()" link="rvtk-yuv2rgb.html#yuv420-to-bgr24"/>
+    <function name="yuyv_to_rgb24 ()" link="rvtk-yuv2rgb.html#yuyv-to-rgb24"/>
+    <function name="yuyv_to_bgr24 ()" link="rvtk-yuv2rgb.html#yuyv-to-bgr24"/>
+    <function name="capture_source_chooser_run ()" link="rvtk-ui.html#capture-source-chooser-run"/>
+    <function name="video_tuning_dialog_run ()" link="rvtk-ui.html#video-tuning-dialog-run"/>
+    <function name="video_tuning_dialog_run_with_props ()" link="rvtk-ui.html#video-tuning-dialog-run-with-props"/>
+    <function name="enum VIDCaptureType" link="rvtk-cvutils.html#VIDCaptureType"/>
+    <function name="capture" link="rvtk-cvutils.html#capture"/>
+    <function name="v4l2FrameToIplImage ()" link="rvtk-cvutils.html#v4l2FrameToIplImage"/>
+    <function name="v4l2CaptureQueryIplImage ()" link="rvtk-cvutils.html#v4l2CaptureQueryIplImage"/>
+  </functions>
+</book>

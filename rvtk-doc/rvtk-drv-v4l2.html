@@ -1,0 +1,895 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>drv-v4l2</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Rvtk Reference Manual">
+<link rel="up" href="ch03.html" title="libv4l2">
+<link rel="prev" href="ch03.html" title="libv4l2">
+<link rel="next" href="rvtk-fourcc.html" title="fourcc">
+<meta name="generator" content="GTK-Doc V1.10 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="Rvtk Core">
+<link rel="chapter" href="ch02.html" title="Rvtk Widgets">
+<link rel="chapter" href="ch03.html" title="libv4l2">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch03.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rvtk Reference Manual</th>
+<td><a accesskey="n" href="rvtk-fourcc.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#rvtk-drv-v4l2.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#rvtk-drv-v4l2.description" class="shortcut">Description</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="rvtk-drv-v4l2"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="rvtk-drv-v4l2.top_of_page"></a>drv-v4l2</span></h2>
+<p>drv-v4l2 — V4L2 Capture utility</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="rvtk-drv-v4l2.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+
+#include &lt;rvtk/v4l2.h&gt;
+
+                    <a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a>;
+<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a>*        <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureOpen" title="v4l2CaptureOpen ()">v4l2CaptureOpen</a>                     (const char *uri);
+<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a>*           <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureQueryFrame" title="v4l2CaptureQueryFrame ()">v4l2CaptureQueryFrame</a>               (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);
+int                 <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureStartStreaming" title="v4l2CaptureStartStreaming ()">v4l2CaptureStartStreaming</a>           (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture,
+                                                         int burst,
+                                                         int nBuffer);
+int                 <a class="link" href="rvtk-drv-v4l2.html#v4l2CaputreStopStreaming" title="v4l2CaputreStopStreaming ()">v4l2CaputreStopStreaming</a>            (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);
+void                <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureRelease" title="v4l2CaptureRelease ()">v4l2CaptureRelease</a>                  (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> **);
+void                <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureSetLog" title="v4l2CaptureSetLog ()">v4l2CaptureSetLog</a>                   (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture,
+                                                         int state);
+const char*         <a class="link" href="rvtk-drv-v4l2.html#v4l2CaputreGetName" title="v4l2CaputreGetName ()">v4l2CaputreGetName</a>                  (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);
+const char*         <a class="link" href="rvtk-drv-v4l2.html#v4l2CaputreGetLocation" title="v4l2CaputreGetLocation ()">v4l2CaputreGetLocation</a>              (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);
+const char*         <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureGetDriver" title="v4l2CaptureGetDriver ()">v4l2CaptureGetDriver</a>                (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);
+int                 <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureQueryResolutionsList" title="v4l2CaptureQueryResolutionsList ()">v4l2CaptureQueryResolutionsList</a>     (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture,
+                                                         <a class="link" href="rvtk-frame.html#VidSize" title="VidSize">VidSize</a> **sizes);
+int                 <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureGetImageFormat" title="v4l2CaptureGetImageFormat ()">v4l2CaptureGetImageFormat</a>           (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);
+int                 <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureSetImageFormat" title="v4l2CaptureSetImageFormat ()">v4l2CaptureSetImageFormat</a>           (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture,
+                                                         <a class="link" href="rvtk-fourcc.html#fourcc-t" title="fourcc_t">fourcc_t</a> fourcc,
+                                                         <a class="link" href="rvtk-frame.html#VidSize" title="VidSize">VidSize</a> *size);
+int                 <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureAutoSetImageFormat" title="v4l2CaptureAutoSetImageFormat ()">v4l2CaptureAutoSetImageFormat</a>       (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture,
+                                                         <a class="link" href="rvtk-fourcc.html#fourcc-t" title="fourcc_t">fourcc_t</a> output);
+int                 <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureGetResolution" title="v4l2CaptureGetResolution ()">v4l2CaptureGetResolution</a>            (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture,
+                                                         <a class="link" href="rvtk-frame.html#VidSize" title="VidSize">VidSize</a> *size);
+int                 <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureSetResolution" title="v4l2CaptureSetResolution ()">v4l2CaptureSetResolution</a>            (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture,
+                                                         <a class="link" href="rvtk-frame.html#VidSize" title="VidSize">VidSize</a> *size);
+double              <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureGetFPS" title="v4l2CaptureGetFPS ()">v4l2CaptureGetFPS</a>                   (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);
+int                 <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureSetFPS" title="v4l2CaptureSetFPS ()">v4l2CaptureSetFPS</a>                   (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture,
+                                                         int fps);
+char**              <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureGetChannelsList" title="v4l2CaptureGetChannelsList ()">v4l2CaptureGetChannelsList</a>          (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);
+char**              <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureGetNormsList" title="v4l2CaptureGetNormsList ()">v4l2CaptureGetNormsList</a>             (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);
+int*                <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureGetImageFormatsList" title="v4l2CaptureGetImageFormatsList ()">v4l2CaptureGetImageFormatsList</a>      (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);
+int                 <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureSetChannel" title="v4l2CaptureSetChannel ()">v4l2CaptureSetChannel</a>               (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *,
+                                                         int index);
+int                 <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureGetChannel" title="v4l2CaptureGetChannel ()">v4l2CaptureGetChannel</a>               (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *);
+int                 <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureSetNorm" title="v4l2CaptureSetNorm ()">v4l2CaptureSetNorm</a>                  (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *,
+                                                         int index);
+int                 <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureGetNorm" title="v4l2CaptureGetNorm ()">v4l2CaptureGetNorm</a>                  (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="rvtk-drv-v4l2.description"></a><h2>Description</h2>
+<p>
+V4L2 Capture utility</p>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="rvtk-drv-v4l2.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="V4L2Capture"></a><h3>V4L2Capture</h3>
+<pre class="programlisting">typedef struct {
+	int fd;
+	
+	/* General Information */
+	
+	/// Device file (e.g /dev/video0)
+	char *location;
+	
+	/// Name of the device
+	char *name;
+	
+	///  The driver of the V4L device
+	char *driver;
+	
+	/// The data bus;
+	char *bus;
+	
+	/// The capabilities
+	unsigned int capabilities;
+	
+	/// no. of channels
+	int nChannels;
+	
+	/// An NULL terminated array of channel name 
+	char **channel_list;
+	
+	/// no. of norms
+	int nNorms;
+		
+	/// An NULL terminated array of norm name
+	char **norm_list;
+
+	/// An array of Video Stand for TV Norm. The size of this array is same as norm_list     
+	v4l2_std_id* std_list;	
+
+	/// An NULL terminated array to hold supported fourcc code. 
+	int *imageformat_list;
+
+	/// no. of support buffer_types;
+	int buffer_types;
+	/// supported buffer types
+	int buffer_type[V4L2_BUF_TYPE_PRIVATE];
+	
+	/* Run-time Information */
+
+	/// The current I/O moade = {V4L2_CAP_READWRITE(default) | V4L2_CAP_STREAMING}
+	int iomode; 
+
+	/// Burst mode 
+	int burst_mode;
+	
+	/// The current input frame's pixel format in fourcc code (little endian) 
+	int format;
+	
+	int channel;
+	
+	int norm;
+	
+	double fps;
+	
+	VidSize resolution;
+			
+	/// The buffer size of input frame. Assigned by v4l_dev_open/v4l_dev_get_image_format.
+	/** If it is set to 0 ,that means it is compressed format. Negative
+	 * value indicate error (probably that the image format is not supported) 
+	 */
+	int bufsize;
+	
+	int bytesperline;
+	
+	/// Turn on logging
+	int log;
+	
+	/* Buffers */
+	
+	/// Buffer to reading frame
+	VidFrame *framesbuffer;
+	
+	/// no. of frames for buffer
+	int frames;	
+		
+	/// Index to current frames buffer
+	int curr_frame_idx;
+} V4L2Capture;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureOpen"></a><h3>v4l2CaptureOpen ()</h3>
+<pre class="programlisting"><a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a>*        v4l2CaptureOpen                     (const char *uri);</pre>
+<p>
+The function v4l2CaptureOpen opens and querys the properties
+of a V4L2 video device. The result will be used to initialize
+the newly allocated V4L2Capture. 
+</p>
+<p>
+ Soon the video device is not used anymore , it should 
+ be released by v4l2CaptureRelease
+</p>
+<p>
+Remark: Device is opened without O_NONBLOCK flag. So the v4l2CaptureQueryFrame
+function is assumed to be a blocked function call. 
+</p>
+<p>
+See <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureRelease" title="v4l2CaptureRelease ()"><code class="function">v4l2CaptureRelease()</code></a> , <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureQueryFrame" title="v4l2CaptureQueryFrame ()"><code class="function">v4l2CaptureQueryFrame()</code></a></p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>uri</code></em> :</span></p></td>
+<td> The location of device.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> Pointer to a initialized video capturing structure, or NULL if failed to open the camera. 
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureQueryFrame"></a><h3>v4l2CaptureQueryFrame ()</h3>
+<pre class="programlisting"><a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a>*           v4l2CaptureQueryFrame               (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);</pre>
+<p>
+See <a class="link" href="rvtk-drv-v4l2.html#v4l2CaptureOpen" title="v4l2CaptureOpen ()"><code class="function">v4l2CaptureOpen()</code></a>
+</p>
+<p>
+<em class="parameter"><code>todo</code></em> time stamp</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td> Video Capture Device
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A newly grabbed video frame. It should not be released or modified by user. 
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureStartStreaming"></a><h3>v4l2CaptureStartStreaming ()</h3>
+<pre class="programlisting">int                 v4l2CaptureStartStreaming           (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture,
+                                                         int burst,
+                                                         int nBuffer);</pre>
+<p>
+Streaming is an I/O method where only pointers to buffers
+are exchanged between application and driver. Depend on 
+driver's implementation, the max no. of buffers could be 
+different. 
+</p>
+<p>
+To retrieve a frame from device, a buffer must be enqueued
+into capturing buffer and then dequeued when the user require 
+to grab the frame.
+</p>
+<p>
+Burst mode controls the way of enqueuing process. With 
+burst mode, all buffers are enqueued in order to get 
+the highest throughput. Otherwise, only a single buffer
+is enqueued for each iteration of <code class="function">v4l2CaputreQueryFrame()</code> .</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td> Video Capture Device
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>burst</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>nBuffer</code></em> :</span></p></td>
+<td> no. of buffer should be allocated. (The min value is 2.) 
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>Non-zero value to indicate error
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaputreStopStreaming"></a><h3>v4l2CaputreStopStreaming ()</h3>
+<pre class="programlisting">int                 v4l2CaputreStopStreaming            (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);</pre>
+<p>
+Stop streaming mode</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureRelease"></a><h3>v4l2CaptureRelease ()</h3>
+<pre class="programlisting">void                v4l2CaptureRelease                  (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> **);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>Param1</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureSetLog"></a><h3>v4l2CaptureSetLog ()</h3>
+<pre class="programlisting">void                v4l2CaptureSetLog                   (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture,
+                                                         int state);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>state</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaputreGetName"></a><h3>v4l2CaputreGetName ()</h3>
+<pre class="programlisting">const char*         v4l2CaputreGetName                  (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaputreGetLocation"></a><h3>v4l2CaputreGetLocation ()</h3>
+<pre class="programlisting">const char*         v4l2CaputreGetLocation              (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureGetDriver"></a><h3>v4l2CaptureGetDriver ()</h3>
+<pre class="programlisting">const char*         v4l2CaptureGetDriver                (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureQueryResolutionsList"></a><h3>v4l2CaptureQueryResolutionsList ()</h3>
+<pre class="programlisting">int                 v4l2CaptureQueryResolutionsList     (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture,
+                                                         <a class="link" href="rvtk-frame.html#VidSize" title="VidSize">VidSize</a> **sizes);</pre>
+<p>
+Remark:
+	VIDIOC_ENUM_FRAMESIZES &amp; VIDIOC_ENUM_FRAMEINTERVALS 
+were introduced in 2.6.19 kernel. Until Feb 2007,
+UVC is the only driver implemented the ioctl, and then 
+it were introduced to PWC on March.
+</p>
+<p>
+ \todo Implemente VIDIOC_ENUM_FRAMESIZES for &gt;=2.6.19 kernel.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td> Video Capture Device
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>sizes</code></em> :</span></p></td>
+<td> Output-variable to hold a newly created null-terminated array to hold the no. of support frame size. It must be released by user.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> no. of available frame size. Negative value to indicate error.
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureGetImageFormat"></a><h3>v4l2CaptureGetImageFormat ()</h3>
+<pre class="programlisting">int                 v4l2CaptureGetImageFormat           (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureSetImageFormat"></a><h3>v4l2CaptureSetImageFormat ()</h3>
+<pre class="programlisting">int                 v4l2CaptureSetImageFormat           (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture,
+                                                         <a class="link" href="rvtk-fourcc.html#fourcc-t" title="fourcc_t">fourcc_t</a> fourcc,
+                                                         <a class="link" href="rvtk-frame.html#VidSize" title="VidSize">VidSize</a> *size);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td> Video Capture Device
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fourcc</code></em> :</span></p></td>
+<td> The fourcc code to be assigned for the device
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>size</code></em> :</span></p></td>
+<td> Pointer to v4lframesize for the input image's size. Pass a null pointer to use orignial size.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> Non-zero value to indicate error
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureAutoSetImageFormat"></a><h3>v4l2CaptureAutoSetImageFormat ()</h3>
+<pre class="programlisting">int                 v4l2CaptureAutoSetImageFormat       (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture,
+                                                         <a class="link" href="rvtk-fourcc.html#fourcc-t" title="fourcc_t">fourcc_t</a> output);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureGetResolution"></a><h3>v4l2CaptureGetResolution ()</h3>
+<pre class="programlisting">int                 v4l2CaptureGetResolution            (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture,
+                                                         <a class="link" href="rvtk-frame.html#VidSize" title="VidSize">VidSize</a> *size);</pre>
+<p>
+Get the current resolution</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>size</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureSetResolution"></a><h3>v4l2CaptureSetResolution ()</h3>
+<pre class="programlisting">int                 v4l2CaptureSetResolution            (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture,
+                                                         <a class="link" href="rvtk-frame.html#VidSize" title="VidSize">VidSize</a> *size);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>size</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureGetFPS"></a><h3>v4l2CaptureGetFPS ()</h3>
+<pre class="programlisting">double              v4l2CaptureGetFPS                   (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureSetFPS"></a><h3>v4l2CaptureSetFPS ()</h3>
+<pre class="programlisting">int                 v4l2CaptureSetFPS                   (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture,
+                                                         int fps);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>fps</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureGetChannelsList"></a><h3>v4l2CaptureGetChannelsList ()</h3>
+<pre class="programlisting">char**              v4l2CaptureGetChannelsList          (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureGetNormsList"></a><h3>v4l2CaptureGetNormsList ()</h3>
+<pre class="programlisting">char**              v4l2CaptureGetNormsList             (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureGetImageFormatsList"></a><h3>v4l2CaptureGetImageFormatsList ()</h3>
+<pre class="programlisting">int*                v4l2CaptureGetImageFormatsList      (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureSetChannel"></a><h3>v4l2CaptureSetChannel ()</h3>
+<pre class="programlisting">int                 v4l2CaptureSetChannel               (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *,
+                                                         int index);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>Param1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>index</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureGetChannel"></a><h3>v4l2CaptureGetChannel ()</h3>
+<pre class="programlisting">int                 v4l2CaptureGetChannel               (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>Param1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureSetNorm"></a><h3>v4l2CaptureSetNorm ()</h3>
+<pre class="programlisting">int                 v4l2CaptureSetNorm                  (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *,
+                                                         int index);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>Param1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>index</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureGetNorm"></a><h3>v4l2CaptureGetNorm ()</h3>
+<pre class="programlisting">int                 v4l2CaptureGetNorm                  (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>Param1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.10</div>
+</body>
+</html>

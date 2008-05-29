@@ -1,0 +1,425 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>rvtkmap</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Rvtk Reference Manual">
+<link rel="up" href="ch01.html" title="Rvtk Core">
+<link rel="prev" href="ch01.html" title="Rvtk Core">
+<link rel="next" href="RvtkHal.html" title="RvtkHal">
+<meta name="generator" content="GTK-Doc V1.10 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="Rvtk Core">
+<link rel="chapter" href="ch02.html" title="Rvtk Widgets">
+<link rel="chapter" href="ch03.html" title="libv4l2">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="ch01.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rvtk Reference Manual</th>
+<td><a accesskey="n" href="RvtkHal.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#rvtk-rvtkmap.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#rvtk-rvtkmap.description" class="shortcut">Description</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="rvtk-rvtkmap"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="rvtk-rvtkmap.top_of_page"></a>rvtkmap</span></h2>
+<p>rvtkmap — Associative container of GValue type</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="rvtk-rvtkmap.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+
+#include &lt;rvtk/rvtk.h&gt;
+
+RvtkMap*            <a class="link" href="rvtk-rvtkmap.html#rvtk-map-new" title="rvtk_map_new ()">rvtk_map_new</a>                        ();
+void                <a class="link" href="rvtk-rvtkmap.html#rvtk-map-free" title="rvtk_map_free ()">rvtk_map_free</a>                       (RvtkMap *map);
+GList*              <a class="link" href="rvtk-rvtkmap.html#rvtk-map-get-key-list" title="rvtk_map_get_key_list ()">rvtk_map_get_key_list</a>               (RvtkMap *map);
+void                <a class="link" href="rvtk-rvtkmap.html#rvtk-map-set-value" title="rvtk_map_set_value ()">rvtk_map_set_value</a>                  (RvtkMap *map,
+                                                         const gchar *key,
+                                                         GValue *value);
+GValue*             <a class="link" href="rvtk-rvtkmap.html#rvtk-map-get-value" title="rvtk_map_get_value ()">rvtk_map_get_value</a>                  (RvtkMap *map,
+                                                         const char *key);
+void                <a class="link" href="rvtk-rvtkmap.html#rvtk-map-set-string" title="rvtk_map_set_string ()">rvtk_map_set_string</a>                 (RvtkMap *map,
+                                                         const char *key,
+                                                         const char *content);
+const gchar*        <a class="link" href="rvtk-rvtkmap.html#rvtk-map-get-string" title="rvtk_map_get_string ()">rvtk_map_get_string</a>                 (RvtkMap *map,
+                                                         const char *key);
+void                <a class="link" href="rvtk-rvtkmap.html#rvtk-map-set-int" title="rvtk_map_set_int ()">rvtk_map_set_int</a>                    (RvtkMap *map,
+                                                         const char *key,
+                                                         int content);
+int                 <a class="link" href="rvtk-rvtkmap.html#rvtk-map-get-int" title="rvtk_map_get_int ()">rvtk_map_get_int</a>                    (RvtkMap *map,
+                                                         const char *key);
+void                <a class="link" href="rvtk-rvtkmap.html#rvtk-map-set-strv" title="rvtk_map_set_strv ()">rvtk_map_set_strv</a>                   (RvtkMap *map,
+                                                         const char *key,
+                                                         GStrv content);
+GStrv               <a class="link" href="rvtk-rvtkmap.html#rvtk-map-get-strv" title="rvtk_map_get_strv ()">rvtk_map_get_strv</a>                   (RvtkMap *map,
+                                                         const char *key);
+gchar*              <a class="link" href="rvtk-rvtkmap.html#rvtk-map-to-text" title="rvtk_map_to_text ()">rvtk_map_to_text</a>                    (RvtkMap *map);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="rvtk-rvtkmap.description"></a><h2>Description</h2>
+<p>
+Associative container of GValue type</p>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="rvtk-rvtkmap.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="rvtk-map-new"></a><h3>rvtk_map_new ()</h3>
+<pre class="programlisting">RvtkMap*            rvtk_map_new                        ();</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-map-free"></a><h3>rvtk_map_free ()</h3>
+<pre class="programlisting">void                rvtk_map_free                       (RvtkMap *map);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-map-get-key-list"></a><h3>rvtk_map_get_key_list ()</h3>
+<pre class="programlisting">GList*              rvtk_map_get_key_list               (RvtkMap *map);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> RvtkMap 
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A double linked list of static string of key. Free it by <code class="function">g_list_free()</code>
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-map-set-value"></a><h3>rvtk_map_set_value ()</h3>
+<pre class="programlisting">void                rvtk_map_set_value                  (RvtkMap *map,
+                                                         const gchar *key,
+                                                         GValue *value);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td> RvtkMap
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td> Key
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>value</code></em> :</span></p></td>
+<td> This function takes ownership of the value. You should not free the memory allocated. 
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-map-get-value"></a><h3>rvtk_map_get_value ()</h3>
+<pre class="programlisting">GValue*             rvtk_map_get_value                  (RvtkMap *map,
+                                                         const char *key);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-map-set-string"></a><h3>rvtk_map_set_string ()</h3>
+<pre class="programlisting">void                rvtk_map_set_string                 (RvtkMap *map,
+                                                         const char *key,
+                                                         const char *content);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>content</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-map-get-string"></a><h3>rvtk_map_get_string ()</h3>
+<pre class="programlisting">const gchar*        rvtk_map_get_string                 (RvtkMap *map,
+                                                         const char *key);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-map-set-int"></a><h3>rvtk_map_set_int ()</h3>
+<pre class="programlisting">void                rvtk_map_set_int                    (RvtkMap *map,
+                                                         const char *key,
+                                                         int content);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>content</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-map-get-int"></a><h3>rvtk_map_get_int ()</h3>
+<pre class="programlisting">int                 rvtk_map_get_int                    (RvtkMap *map,
+                                                         const char *key);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-map-set-strv"></a><h3>rvtk_map_set_strv ()</h3>
+<pre class="programlisting">void                rvtk_map_set_strv                   (RvtkMap *map,
+                                                         const char *key,
+                                                         GStrv content);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>content</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-map-get-strv"></a><h3>rvtk_map_get_strv ()</h3>
+<pre class="programlisting">GStrv               rvtk_map_get_strv                   (RvtkMap *map,
+                                                         const char *key);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>key</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-map-to-text"></a><h3>rvtk_map_to_text ()</h3>
+<pre class="programlisting">gchar*              rvtk_map_to_text                    (RvtkMap *map);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>map</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.10</div>
+</body>
+</html>

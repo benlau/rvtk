@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>yuv2rgb</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Rvtk Reference Manual">
+<link rel="up" href="ch03.html" title="libv4l2">
+<link rel="prev" href="rvtk-utils.html" title="utils">
+<link rel="next" href="rvtk-ui.html" title="ui">
+<meta name="generator" content="GTK-Doc V1.10 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="Rvtk Core">
+<link rel="chapter" href="ch02.html" title="Rvtk Widgets">
+<link rel="chapter" href="ch03.html" title="libv4l2">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="rvtk-utils.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rvtk Reference Manual</th>
+<td><a accesskey="n" href="rvtk-ui.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#rvtk-yuv2rgb.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#rvtk-yuv2rgb.description" class="shortcut">Description</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="rvtk-yuv2rgb"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="rvtk-yuv2rgb.top_of_page"></a>yuv2rgb</span></h2>
+<p>yuv2rgb — YUYV/YUV420 conversion utility</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="rvtk-yuv2rgb.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+
+#include &lt;rvtk/v4l2.h&gt;
+
+int                 <a class="link" href="rvtk-yuv2rgb.html#yuv420-to-rgb24" title="yuv420_to_rgb24 ()">yuv420_to_rgb24</a>                     (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *src,
+                                                         <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *dest);
+int                 <a class="link" href="rvtk-yuv2rgb.html#yuv420-to-bgr24" title="yuv420_to_bgr24 ()">yuv420_to_bgr24</a>                     (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *src,
+                                                         <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *dest);
+int                 <a class="link" href="rvtk-yuv2rgb.html#yuyv-to-rgb24" title="yuyv_to_rgb24 ()">yuyv_to_rgb24</a>                       (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *src,
+                                                         <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *dest);
+int                 <a class="link" href="rvtk-yuv2rgb.html#yuyv-to-bgr24" title="yuyv_to_bgr24 ()">yuyv_to_bgr24</a>                       (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *src,
+                                                         <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *dest);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="rvtk-yuv2rgb.description"></a><h2>Description</h2>
+<p>
+YUYV/YUV420 conversion utility</p>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="rvtk-yuv2rgb.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="yuv420-to-rgb24"></a><h3>yuv420_to_rgb24 ()</h3>
+<pre class="programlisting">int                 yuv420_to_rgb24                     (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *src,
+                                                         <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *dest);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="yuv420-to-bgr24"></a><h3>yuv420_to_bgr24 ()</h3>
+<pre class="programlisting">int                 yuv420_to_bgr24                     (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *src,
+                                                         <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *dest);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="yuyv-to-rgb24"></a><h3>yuyv_to_rgb24 ()</h3>
+<pre class="programlisting">int                 yuyv_to_rgb24                       (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *src,
+                                                         <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *dest);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="yuyv-to-bgr24"></a><h3>yuyv_to_bgr24 ()</h3>
+<pre class="programlisting">int                 yuyv_to_bgr24                       (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *src,
+                                                         <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *dest);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.10</div>
+</body>
+</html>

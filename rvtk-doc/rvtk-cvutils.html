@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>cvutils</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Rvtk Reference Manual">
+<link rel="up" href="ch03.html" title="libv4l2">
+<link rel="prev" href="rvtk-ui.html" title="ui">
+<meta name="generator" content="GTK-Doc V1.10 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="Rvtk Core">
+<link rel="chapter" href="ch02.html" title="Rvtk Widgets">
+<link rel="chapter" href="ch03.html" title="libv4l2">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="rvtk-ui.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rvtk Reference Manual</th>
+<td> </td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#rvtk-cvutils.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#rvtk-cvutils.description" class="shortcut">Description</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="rvtk-cvutils"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="rvtk-cvutils.top_of_page"></a>cvutils</span></h2>
+<p>cvutils</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="rvtk-cvutils.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+enum                <a class="link" href="rvtk-cvutils.html#VIDCaptureType" title="enum VIDCaptureType">VIDCaptureType</a>;
+                    <a class="link" href="rvtk-cvutils.html#capture" title="capture">capture</a>;
+void                <a class="link" href="rvtk-cvutils.html#v4l2FrameToIplImage" title="v4l2FrameToIplImage ()">v4l2FrameToIplImage</a>                 (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame,
+                                                         IplImage *image);
+IplImage*           <a class="link" href="rvtk-cvutils.html#v4l2CaptureQueryIplImage" title="v4l2CaptureQueryIplImage ()">v4l2CaptureQueryIplImage</a>            (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture,
+                                                         IplImage *buffer);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="rvtk-cvutils.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="rvtk-cvutils.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="VIDCaptureType"></a><h3>enum VIDCaptureType</h3>
+<pre class="programlisting">typedef enum  {
+	VID_CAPTURE_TYPE_V4L2,
+	VID_CAPTURE_TYPE_CV,
+} VIDCaptureType;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="capture"></a><h3>capture</h3>
+<pre class="programlisting">typedef struct {
+	VIDCaptureType type;
+
+	union {
+		V4L2Capture *v4l2;
+		CvCapture *cv;
+} capture;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2FrameToIplImage"></a><h3>v4l2FrameToIplImage ()</h3>
+<pre class="programlisting">void                v4l2FrameToIplImage                 (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame,
+                                                         IplImage *image);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>image</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2CaptureQueryIplImage"></a><h3>v4l2CaptureQueryIplImage ()</h3>
+<pre class="programlisting">IplImage*           v4l2CaptureQueryIplImage            (<a class="link" href="rvtk-drv-v4l2.html#V4L2Capture" title="V4L2Capture">V4L2Capture</a> *capture,
+                                                         IplImage *buffer);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>capture</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>buffer</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.10</div>
+</body>
+</html>
