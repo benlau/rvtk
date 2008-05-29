@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE book PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "">
+<book xmlns="http://www.devhelp.net/book" title="Rvtk Reference Manual" link="index.html" author="" name="rvtk" version="2">
+  <chapters>
+    <sub name="Rvtk Core" link="ch01.html">
+      <sub name="rvtkmap" link="rvtk-rvtkmap.html"/>
+      <sub name="RvtkHal" link="RvtkHal.html"/>
+    </sub>
+    <sub name="Rvtk Widgets" link="ch02.html">
+      <sub name="Gallery" link="RvtkWidgetGallery.html"/>
+      <sub name="RvtkMediaChooser" link="RvtkMediaChooser.html"/>
+      <sub name="RvtkVideoTuning" link="RvtkVideoTuning.html"/>
+      <sub name="RvtkCanvas" link="RvtkCanvas.html"/>
+      <sub name="RvtkGridPoints" link="RvtkGridPoints.html"/>
+      <sub name="RvtkViewFinder" link="RvtkViewFinder.html"/>
+    </sub>
+    <sub name="libv4l2" link="ch03.html">
+      <sub name="drv-v4l2" link="rvtk-drv-v4l2.html"/>
+      <sub name="fourcc" link="rvtk-fourcc.html"/>
+      <sub name="frame" link="rvtk-frame.html"/>
+      <sub name="utils" link="rvtk-utils.html"/>
+      <sub name="yuv2rgb" link="rvtk-yuv2rgb.html"/>
+      <sub name="ui" link="rvtk-ui.html"/>
+      <sub name="cvutils" link="rvtk-cvutils.html"/>
+    </sub>
+  </chapters>
+  <functions>
+    <keyword type="function" name="rvtk_map_new ()" link="rvtk-rvtkmap.html#rvtk-map-new"/>
+    <keyword type="function" name="rvtk_map_free ()" link="rvtk-rvtkmap.html#rvtk-map-free"/>
+    <keyword type="function" name="rvtk_map_get_key_list ()" link="rvtk-rvtkmap.html#rvtk-map-get-key-list"/>
+    <keyword type="function" name="rvtk_map_set_value ()" link="rvtk-rvtkmap.html#rvtk-map-set-value"/>
+    <keyword type="function" name="rvtk_map_get_value ()" link="rvtk-rvtkmap.html#rvtk-map-get-value"/>
+    <keyword type="function" name="rvtk_map_set_string ()" link="rvtk-rvtkmap.html#rvtk-map-set-string"/>
+    <keyword type="function" name="rvtk_map_get_string ()" link="rvtk-rvtkmap.html#rvtk-map-get-string"/>
+    <keyword type="function" name="rvtk_map_set_int ()" link="rvtk-rvtkmap.html#rvtk-map-set-int"/>
+    <keyword type="function" name="rvtk_map_get_int ()" link="rvtk-rvtkmap.html#rvtk-map-get-int"/>
+    <keyword type="function" name="rvtk_map_set_strv ()" link="rvtk-rvtkmap.html#rvtk-map-set-strv"/>
+    <keyword type="function" name="rvtk_map_get_strv ()" link="rvtk-rvtkmap.html#rvtk-map-get-strv"/>
+    <keyword type="function" name="rvtk_map_to_text ()" link="rvtk-rvtkmap.html#rvtk-map-to-text"/>
+    <keyword type="struct" name="RvtkHal" link="RvtkHal.html#RvtkHal-struct"/>
+    <keyword type="function" name="rvtk_hal_new ()" link="RvtkHal.html#rvtk-hal-new"/>
+    <keyword type="function" name="rvtk_hal_scan ()" link="RvtkHal.html#rvtk-hal-scan"/>
+    <keyword type="function" name="rvtk_hal_get_device_capacity ()" link="RvtkHal.html#rvtk-hal-get-device-capacity"/>
+    <keyword type="function" name="rvtk_hal_get_device_count ()" link="RvtkHal.html#rvtk-hal-get-device-count"/>
+    <keyword type="function" name="rvtk_hal_query_capacity ()" link="RvtkHal.html#rvtk-hal-query-capacity"/>
+    <keyword type="macro" name="RVTK_MEDIA_CHOOSER_CONST()" link="RvtkMediaChooser.html#RVTK-MEDIA-CHOOSER-CONST:CAPS"/>
+    <keyword type="struct" name="RvtkMediaChooserPrivate" link="RvtkMediaChooser.html#RvtkMediaChooserPrivate"/>
+    <keyword type="struct" name="RvtkMediaChooser" link="RvtkMediaChooser.html#RvtkMediaChooser-struct"/>
+    <keyword type="function" name="rvtk_media_chooser_new ()" link="RvtkMediaChooser.html#rvtk-media-chooser-new"/>
+    <keyword type="function" name="rvtk_media_chooser_unref ()" link="RvtkMediaChooser.html#rvtk-media-chooser-unref"/>
+    <keyword type="function" name="rvtk_media_chooser_is_selected_video_device ()" link="RvtkMediaChooser.html#rvtk-media-chooser-is-selected-video-device"/>
+    <keyword type="function" name="rvtk_media_chooser_get_selected ()" link="RvtkMediaChooser.html#rvtk-media-chooser-get-selected"/>
+    <keyword type="function" name="rvtk_media_chooser_scan_devices ()" link="RvtkMediaChooser.html#rvtk-media-chooser-scan-devices"/>
+    <keyword type="function" name="rvtk_media_chooser_run ()" link="RvtkMediaChooser.html#rvtk-media-chooser-run"/>
+    <keyword type="macro" name="RVTK_VIDEO_TUNING_CONST()" link="RvtkVideoTuning.html#RVTK-VIDEO-TUNING-CONST:CAPS"/>
+    <keyword type="struct" name="RvtkVideoTuningPrivate" link="RvtkVideoTuning.html#RvtkVideoTuningPrivate"/>
+    <keyword type="struct" name="RvtkVideoTuning" link="RvtkVideoTuning.html#RvtkVideoTuning-struct"/>
+    <keyword type="function" name="rvtk_video_tuning_new ()" link="RvtkVideoTuning.html#rvtk-video-tuning-new"/>
+    <keyword type="function" name="rvtk_video_tuning_unref ()" link="RvtkVideoTuning.html#rvtk-video-tuning-unref"/>
+    <keyword type="function" name="rvtk_video_tuning_load ()" link="RvtkVideoTuning.html#rvtk-video-tuning-load"/>
+    <keyword type="function" name="rvtk_video_tuning_apply ()" link="RvtkVideoTuning.html#rvtk-video-tuning-apply"/>
+    <keyword type="function" name="rvtk_video_tuning_run ()" link="RvtkVideoTuning.html#rvtk-video-tuning-run"/>
+    <keyword type="macro" name="RVTK_CANVAS_CONST()" link="RvtkCanvas.html#RVTK-CANVAS-CONST:CAPS"/>
+    <keyword type="struct" name="RvtkCanvasPrivate" link="RvtkCanvas.html#RvtkCanvasPrivate"/>
+    <keyword type="struct" name="RvtkCanvas" link="RvtkCanvas.html#RvtkCanvas-struct"/>
+    <keyword type="function" name="rvtk_canvas_frame_size_changed ()" link="RvtkCanvas.html#rvtk-canvas-frame-size-changed"/>
+    <keyword type="function" name="rvtk_canvas_new ()" link="RvtkCanvas.html#rvtk-canvas-new"/>
+    <keyword type="function" name="rvtk_canvas_draw_pixbuf ()" link="RvtkCanvas.html#rvtk-canvas-draw-pixbuf"/>
+    <keyword type="function" name="rvtk_canvas_draw_frame ()" link="RvtkCanvas.html#rvtk-canvas-draw-frame"/>
+    <keyword type="function" name="rvtk_canvas_copy_area ()" link="RvtkCanvas.html#rvtk-canvas-copy-area"/>
+    <keyword type="function" name="rvtk_canvas_put ()" link="RvtkCanvas.html#rvtk-canvas-put"/>
+    <keyword type="function" name="rvtk_canvas_move ()" link="RvtkCanvas.html#rvtk-canvas-move"/>
+    <keyword type="macro" name="rvtk_canvas_connect__frame_size_changed()" link="RvtkCanvas.html#rvtk-canvas-connect--frame-size-changed"/>
+    <keyword type="macro" name="rvtk_canvas_connect_after__frame_size_changed()" link="RvtkCanvas.html#rvtk-canvas-connect-after--frame-size-changed"/>
+    <keyword type="macro" name="rvtk_canvas_connect_data__frame_size_changed()" link="RvtkCanvas.html#rvtk-canvas-connect-data--frame-size-changed"/>
+    <keyword type="macro" name="RVTK_CANVAS_PROP_SCALABLE()" link="RvtkCanvas.html#RVTK-CANVAS-PROP-SCALABLE:CAPS"/>
+    <keyword type="macro" name="RVTK_CANVAS_GET_PROP_SCALABLE()" link="RvtkCanvas.html#RVTK-CANVAS-GET-PROP-SCALABLE:CAPS"/>
+    <keyword type="macro" name="RVTK_CANVAS_PROP_FRAME_WIDTH()" link="RvtkCanvas.html#RVTK-CANVAS-PROP-FRAME-WIDTH:CAPS"/>
+    <keyword type="macro" name="RVTK_CANVAS_GET_PROP_FRAME_WIDTH()" link="RvtkCanvas.html#RVTK-CANVAS-GET-PROP-FRAME-WIDTH:CAPS"/>
+    <keyword type="macro" name="RVTK_CANVAS_PROP_FRAME_HEIGHT()" link="RvtkCanvas.html#RVTK-CANVAS-PROP-FRAME-HEIGHT:CAPS"/>
+    <keyword type="macro" name="RVTK_CANVAS_GET_PROP_FRAME_HEIGHT()" link="RvtkCanvas.html#RVTK-CANVAS-GET-PROP-FRAME-HEIGHT:CAPS"/>
+    <keyword type="" name="The &quot;frame-height&quot; property" link="RvtkCanvas.html#RvtkCanvas--frame-height"/>
+    <keyword type="" name="The &quot;frame-width&quot; property" link="RvtkCanvas.html#RvtkCanvas--frame-width"/>
+    <keyword type="" name="The &quot;scalable&quot; property" link="RvtkCanvas.html#RvtkCanvas--scalable"/>
+    <keyword type="" name="The &quot;frame-size-changed&quot; signal" link="RvtkCanvas.html#RvtkCanvas-frame-size-changed"/>
+    <keyword type="macro" name="RVTK_GRID_POINTS_CONST()" link="RvtkGridPoints.html#RVTK-GRID-POINTS-CONST:CAPS"/>
+    <keyword type="struct" name="RvtkGridPointsPrivate" link="RvtkGridPoints.html#RvtkGridPointsPrivate"/>
+    <keyword type="struct" name="RvtkGridPoints" link="RvtkGridPoints.html#RvtkGridPoints-struct"/>
+    <keyword type="function" name="rvtk_grid_points_new ()" link="RvtkGridPoints.html#rvtk-grid-points-new"/>
+    <keyword type="function" name="rvtk_grid_points_unref ()" link="RvtkGridPoints.html#rvtk-grid-points-unref"/>
+    <keyword type="function" name="rvtk_grid_points_set_grid_point ()" link="RvtkGridPoints.html#rvtk-grid-points-set-grid-point"/>
+    <keyword type="function" name="rvtk_grid_points_get_active_point ()" link="RvtkGridPoints.html#rvtk-grid-points-get-active-point"/>
+    <keyword type="function" name="rvtk_grid_points_set_active_point ()" link="RvtkGridPoints.html#rvtk-grid-points-set-active-point"/>
+    <keyword type="function" name="rvtk_grid_points_next_active_point ()" link="RvtkGridPoints.html#rvtk-grid-points-next-active-point"/>
+    <keyword type="function" name="rvtk_grid_points_revert_active_point ()" link="RvtkGridPoints.html#rvtk-grid-points-revert-active-point"/>
+    <keyword type="function" name="rvtk_grid_points_set_highlight ()" link="RvtkGridPoints.html#rvtk-grid-points-set-highlight"/>
+    <keyword type="macro" name="RVTK_GRID_POINTS_PROP_GRID_POINT()" link="RvtkGridPoints.html#RVTK-GRID-POINTS-PROP-GRID-POINT:CAPS"/>
+    <keyword type="macro" name="RVTK_GRID_POINTS_GET_PROP_GRID_POINT()" link="RvtkGridPoints.html#RVTK-GRID-POINTS-GET-PROP-GRID-POINT:CAPS"/>
+    <keyword type="macro" name="RVTK_GRID_POINTS_PROP_ACTIVE_POINT()" link="RvtkGridPoints.html#RVTK-GRID-POINTS-PROP-ACTIVE-POINT:CAPS"/>
+    <keyword type="macro" name="RVTK_GRID_POINTS_GET_PROP_ACTIVE_POINT()" link="RvtkGridPoints.html#RVTK-GRID-POINTS-GET-PROP-ACTIVE-POINT:CAPS"/>
+    <keyword type="" name="The &quot;active-point&quot; property" link="RvtkGridPoints.html#RvtkGridPoints--active-point"/>
+    <keyword type="" name="The &quot;grid-point&quot; property" link="RvtkGridPoints.html#RvtkGridPoints--grid-point"/>
+    <keyword type="macro" name="RVTK_VIEW_FINDER_CONST()" link="RvtkViewFinder.html#RVTK-VIEW-FINDER-CONST:CAPS"/>
+    <keyword type="struct" name="RvtkViewFinderPrivate" link="RvtkViewFinder.html#RvtkViewFinderPrivate"/>
+    <keyword type="struct" name="RvtkViewFinder" link="RvtkViewFinder.html#RvtkViewFinder-struct"/>
+    <keyword type="function" name="rvtk_view_finder_new ()" link="RvtkViewFinder.html#rvtk-view-finder-new"/>
+    <keyword type="function" name="rvtk_view_finder_set_size ()" link="RvtkViewFinder.html#rvtk-view-finder-set-size"/>
+    <keyword type="function" name="rvtk_view_finder_get_size ()" link="RvtkViewFinder.html#rvtk-view-finder-get-size"/>
+    <keyword type="function" name="rvtk_view_finder_get_view_region ()" link="RvtkViewFinder.html#rvtk-view-finder-get-view-region"/>
+    <keyword type="function" name="rvtk_view_finder_copy_area_from_canvas ()" link="RvtkViewFinder.html#rvtk-view-finder-copy-area-from-canvas"/>
+    <keyword type="macro" name="RVTK_VIEW_FINDER_PROP_WIDTH()" link="RvtkViewFinder.html#RVTK-VIEW-FINDER-PROP-WIDTH:CAPS"/>
+    <keyword type="macro" name="RVTK_VIEW_FINDER_GET_PROP_WIDTH()" link="RvtkViewFinder.html#RVTK-VIEW-FINDER-GET-PROP-WIDTH:CAPS"/>
+    <keyword type="macro" name="RVTK_VIEW_FINDER_PROP_HEIGHT()" link="RvtkViewFinder.html#RVTK-VIEW-FINDER-PROP-HEIGHT:CAPS"/>
+    <keyword type="macro" name="RVTK_VIEW_FINDER_GET_PROP_HEIGHT()" link="RvtkViewFinder.html#RVTK-VIEW-FINDER-GET-PROP-HEIGHT:CAPS"/>
+    <keyword type="" name="The &quot;height&quot; property" link="RvtkViewFinder.html#RvtkViewFinder--height"/>
+    <keyword type="" name="The &quot;width&quot; property" link="RvtkViewFinder.html#RvtkViewFinder--width"/>
+    <keyword type="struct" name="V4L2Capture" link="rvtk-drv-v4l2.html#V4L2Capture"/>
+    <keyword type="function" name="v4l2CaptureOpen ()" link="rvtk-drv-v4l2.html#v4l2CaptureOpen"/>
+    <keyword type="function" name="v4l2CaptureQueryFrame ()" link="rvtk-drv-v4l2.html#v4l2CaptureQueryFrame"/>
+    <keyword type="function" name="v4l2CaptureStartStreaming ()" link="rvtk-drv-v4l2.html#v4l2CaptureStartStreaming"/>
+    <keyword type="function" name="v4l2CaputreStopStreaming ()" link="rvtk-drv-v4l2.html#v4l2CaputreStopStreaming"/>
+    <keyword type="function" name="v4l2CaptureRelease ()" link="rvtk-drv-v4l2.html#v4l2CaptureRelease"/>
+    <keyword type="function" name="v4l2CaptureSetLog ()" link="rvtk-drv-v4l2.html#v4l2CaptureSetLog"/>
+    <keyword type="function" name="v4l2CaputreGetName ()" link="rvtk-drv-v4l2.html#v4l2CaputreGetName"/>
+    <keyword type="function" name="v4l2CaputreGetLocation ()" link="rvtk-drv-v4l2.html#v4l2CaputreGetLocation"/>
+    <keyword type="function" name="v4l2CaptureGetDriver ()" link="rvtk-drv-v4l2.html#v4l2CaptureGetDriver"/>
+    <keyword type="function" name="v4l2CaptureQueryResolutionsList ()" link="rvtk-drv-v4l2.html#v4l2CaptureQueryResolutionsList"/>
+    <keyword type="function" name="v4l2CaptureGetImageFormat ()" link="rvtk-drv-v4l2.html#v4l2CaptureGetImageFormat"/>
+    <keyword type="function" name="v4l2CaptureSetImageFormat ()" link="rvtk-drv-v4l2.html#v4l2CaptureSetImageFormat"/>
+    <keyword type="function" name="v4l2CaptureAutoSetImageFormat ()" link="rvtk-drv-v4l2.html#v4l2CaptureAutoSetImageFormat"/>
+    <keyword type="function" name="v4l2CaptureGetResolution ()" link="rvtk-drv-v4l2.html#v4l2CaptureGetResolution"/>
+    <keyword type="function" name="v4l2CaptureSetResolution ()" link="rvtk-drv-v4l2.html#v4l2CaptureSetResolution"/>
+    <keyword type="function" name="v4l2CaptureGetFPS ()" link="rvtk-drv-v4l2.html#v4l2CaptureGetFPS"/>
+    <keyword type="function" name="v4l2CaptureSetFPS ()" link="rvtk-drv-v4l2.html#v4l2CaptureSetFPS"/>
+    <keyword type="function" name="v4l2CaptureGetChannelsList ()" link="rvtk-drv-v4l2.html#v4l2CaptureGetChannelsList"/>
+    <keyword type="function" name="v4l2CaptureGetNormsList ()" link="rvtk-drv-v4l2.html#v4l2CaptureGetNormsList"/>
+    <keyword type="function" name="v4l2CaptureGetImageFormatsList ()" link="rvtk-drv-v4l2.html#v4l2CaptureGetImageFormatsList"/>
+    <keyword type="function" name="v4l2CaptureSetChannel ()" link="rvtk-drv-v4l2.html#v4l2CaptureSetChannel"/>
+    <keyword type="function" name="v4l2CaptureGetChannel ()" link="rvtk-drv-v4l2.html#v4l2CaptureGetChannel"/>
+    <keyword type="function" name="v4l2CaptureSetNorm ()" link="rvtk-drv-v4l2.html#v4l2CaptureSetNorm"/>
+    <keyword type="function" name="v4l2CaptureGetNorm ()" link="rvtk-drv-v4l2.html#v4l2CaptureGetNorm"/>
+    <keyword type="macro" name="FOURCC()" link="rvtk-fourcc.html#FOURCC:CAPS"/>
+    <keyword type="typedef" name="fourcc_t" link="rvtk-fourcc.html#fourcc-t"/>
+    <keyword type="function" name="vidFourccToString ()" link="rvtk-fourcc.html#vidFourccToString"/>
+    <keyword type="function" name="vidFourccCalcFrameSize ()" link="rvtk-fourcc.html#vidFourccCalcFrameSize"/>
+    <keyword type="struct" name="VidSize" link="rvtk-frame.html#VidSize"/>
+    <keyword type="struct" name="VidFrame" link="rvtk-frame.html#VidFrame"/>
+    <keyword type="function" name="vidFrameCreate ()" link="rvtk-frame.html#vidFrameCreate"/>
+    <keyword type="function" name="vidFrameRef ()" link="rvtk-frame.html#vidFrameRef"/>
+    <keyword type="function" name="vidFrameUnref ()" link="rvtk-frame.html#vidFrameUnref"/>
+    <keyword type="function" name="vidFrameRelease ()" link="rvtk-frame.html#vidFrameRelease"/>
+    <keyword type="function" name="vidFrameModify ()" link="rvtk-frame.html#vidFrameModify"/>
+    <keyword type="function" name="vidFrameCache ()" link="rvtk-frame.html#vidFrameCache"/>
+    <keyword type="function" name="vidFrameChangeFormat ()" link="rvtk-frame.html#vidFrameChangeFormat"/>
+    <keyword type="function" name="vidFrameGetWidth ()" link="rvtk-frame.html#vidFrameGetWidth"/>
+    <keyword type="function" name="vidFrameGetHeight ()" link="rvtk-frame.html#vidFrameGetHeight"/>
+    <keyword type="function" name="vidFrameGetImageLength ()" link="rvtk-frame.html#vidFrameGetImageLength"/>
+    <keyword type="function" name="vidFrameGetBufferLength ()" link="rvtk-frame.html#vidFrameGetBufferLength"/>
+    <keyword type="function" name="vidFrameGetImageData ()" link="rvtk-frame.html#vidFrameGetImageData"/>
+    <keyword type="function" name="vidFrameGetFormat ()" link="rvtk-frame.html#vidFrameGetFormat"/>
+    <keyword type="function" name="vidFrameResizeBuffer ()" link="rvtk-frame.html#vidFrameResizeBuffer"/>
+    <keyword type="function" name="vidFrameGetRowStride ()" link="rvtk-frame.html#vidFrameGetRowStride"/>
+    <keyword type="function" name="vidFrameCopy ()" link="rvtk-frame.html#vidFrameCopy"/>
+    <keyword type="function" name="vidFrameClone ()" link="rvtk-frame.html#vidFrameClone"/>
+    <keyword type="function" name="v4l2ConvFunc ()" link="rvtk-frame.html#v4l2ConvFunc"/>
+    <keyword type="struct" name="VidConv" link="rvtk-frame.html#VidConv"/>
+    <keyword type="function" name="vidConvFind ()" link="rvtk-frame.html#vidConvFind"/>
+    <keyword type="function" name="vidConvProcess ()" link="rvtk-frame.html#vidConvProcess"/>
+    <keyword type="enum" name="enum RvtkLogLevel" link="rvtk-utils.html#RvtkLogLevel"/>
+    <keyword type="function" name="rvtk_log ()" link="rvtk-utils.html#rvtk-log"/>
+    <keyword type="function" name="yuv420_to_rgb24 ()" link="rvtk-yuv2rgb.html#yuv420-to-rgb24"/>
+    <keyword type="function" name="yuv420_to_bgr24 ()" link="rvtk-yuv2rgb.html#yuv420-to-bgr24"/>
+    <keyword type="function" name="yuyv_to_rgb24 ()" link="rvtk-yuv2rgb.html#yuyv-to-rgb24"/>
+    <keyword type="function" name="yuyv_to_bgr24 ()" link="rvtk-yuv2rgb.html#yuyv-to-bgr24"/>
+    <keyword type="function" name="capture_source_chooser_run ()" link="rvtk-ui.html#capture-source-chooser-run"/>
+    <keyword type="function" name="video_tuning_dialog_run ()" link="rvtk-ui.html#video-tuning-dialog-run"/>
+    <keyword type="function" name="video_tuning_dialog_run_with_props ()" link="rvtk-ui.html#video-tuning-dialog-run-with-props"/>
+    <keyword type="enum" name="enum VIDCaptureType" link="rvtk-cvutils.html#VIDCaptureType"/>
+    <keyword type="struct" name="capture" link="rvtk-cvutils.html#capture"/>
+    <keyword type="function" name="v4l2FrameToIplImage ()" link="rvtk-cvutils.html#v4l2FrameToIplImage"/>
+    <keyword type="function" name="v4l2CaptureQueryIplImage ()" link="rvtk-cvutils.html#v4l2CaptureQueryIplImage"/>
+  </functions>
+</book>

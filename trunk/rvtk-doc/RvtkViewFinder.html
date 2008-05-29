@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RvtkViewFinder</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Rvtk Reference Manual">
+<link rel="up" href="ch02.html" title="Rvtk Widgets">
+<link rel="prev" href="RvtkGridPoints.html" title="RvtkGridPoints">
+<link rel="next" href="ch03.html" title="libv4l2">
+<meta name="generator" content="GTK-Doc V1.10 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="Rvtk Core">
+<link rel="chapter" href="ch02.html" title="Rvtk Widgets">
+<link rel="chapter" href="ch03.html" title="libv4l2">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RvtkGridPoints.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rvtk Reference Manual</th>
+<td><a accesskey="n" href="ch03.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#RvtkViewFinder.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RvtkViewFinder.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RvtkViewFinder.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RvtkViewFinder.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#RvtkViewFinder.properties" class="shortcut">Properties</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="RvtkViewFinder"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RvtkViewFinder.top_of_page"></a>RvtkViewFinder</span></h2>
+<p>RvtkViewFinder</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RvtkViewFinder.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a class="link" href="RvtkViewFinder.html#RVTK-VIEW-FINDER-CONST:CAPS" title="RVTK_VIEW_FINDER_CONST()">RVTK_VIEW_FINDER_CONST</a>              (obj)
+                    <a class="link" href="RvtkViewFinder.html#RvtkViewFinderPrivate" title="RvtkViewFinderPrivate">RvtkViewFinderPrivate</a>;
+                    <a class="link" href="RvtkViewFinder.html#RvtkViewFinder-struct" title="RvtkViewFinder">RvtkViewFinder</a>;
+<a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a>*          <a class="link" href="RvtkViewFinder.html#rvtk-view-finder-new" title="rvtk_view_finder_new ()">rvtk_view_finder_new</a>                (void);
+void                <a class="link" href="RvtkViewFinder.html#rvtk-view-finder-set-size" title="rvtk_view_finder_set_size ()">rvtk_view_finder_set_size</a>           (<a class="link" href="RvtkViewFinder.html" title="RvtkViewFinder">RvtkViewFinder</a> *self,
+                                                         int width,
+                                                         int height);
+void                <a class="link" href="RvtkViewFinder.html#rvtk-view-finder-get-size" title="rvtk_view_finder_get_size ()">rvtk_view_finder_get_size</a>           (<a class="link" href="RvtkViewFinder.html" title="RvtkViewFinder">RvtkViewFinder</a> *self,
+                                                         int *width,
+                                                         int *height);
+void                <a class="link" href="RvtkViewFinder.html#rvtk-view-finder-get-view-region" title="rvtk_view_finder_get_view_region ()">rvtk_view_finder_get_view_region</a>    (<a class="link" href="RvtkViewFinder.html" title="RvtkViewFinder">RvtkViewFinder</a> *self,
+                                                         int *x,
+                                                         int *y,
+                                                         int *width,
+                                                         int *height);
+void                <a class="link" href="RvtkViewFinder.html#rvtk-view-finder-copy-area-from-canvas" title="rvtk_view_finder_copy_area_from_canvas ()">rvtk_view_finder_copy_area_from_canvas</a>
+                                                        (<a class="link" href="RvtkViewFinder.html" title="RvtkViewFinder">RvtkViewFinder</a> *self,
+                                                         <a class="link" href="RvtkCanvas.html" title="RvtkCanvas">RvtkCanvas</a> *canvas,
+                                                         <a
+href="/usr/share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf.html#GdkPixbuf"
+>GdkPixbuf</a> *pixbuf);
+#define             <a class="link" href="RvtkViewFinder.html#RVTK-VIEW-FINDER-PROP-WIDTH:CAPS" title="RVTK_VIEW_FINDER_PROP_WIDTH()">RVTK_VIEW_FINDER_PROP_WIDTH</a>         (arg)
+#define             <a class="link" href="RvtkViewFinder.html#RVTK-VIEW-FINDER-GET-PROP-WIDTH:CAPS" title="RVTK_VIEW_FINDER_GET_PROP_WIDTH()">RVTK_VIEW_FINDER_GET_PROP_WIDTH</a>     (arg)
+#define             <a class="link" href="RvtkViewFinder.html#RVTK-VIEW-FINDER-PROP-HEIGHT:CAPS" title="RVTK_VIEW_FINDER_PROP_HEIGHT()">RVTK_VIEW_FINDER_PROP_HEIGHT</a>        (arg)
+#define             <a class="link" href="RvtkViewFinder.html#RVTK-VIEW-FINDER-GET-PROP-HEIGHT:CAPS" title="RVTK_VIEW_FINDER_GET_PROP_HEIGHT()">RVTK_VIEW_FINDER_GET_PROP_HEIGHT</a>    (arg)
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkViewFinder.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkObject.html"
+>GtkObject</a>
+               +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a>
+                     +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkMisc.html"
+>GtkMisc</a>
+                           +----RvtkViewFinder
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkViewFinder.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RvtkViewFinder implements
+ AtkImplementorIface and  <a
+href="/usr/share/gtk-doc/html/gtk/gtk-gtkbuildable.html#GtkBuildable"
+>GtkBuildable</a>.</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkViewFinder.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="RvtkViewFinder.html#RvtkViewFinder--height" title='The "height" property'>height</a>"                   gint                  : Read / Write
+  "<a class="link" href="RvtkViewFinder.html#RvtkViewFinder--width" title='The "width" property'>width</a>"                    gint                  : Read / Write
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkViewFinder.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkViewFinder.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="RVTK-VIEW-FINDER-CONST:CAPS"></a><h3>RVTK_VIEW_FINDER_CONST()</h3>
+<pre class="programlisting">#define RVTK_VIEW_FINDER_CONST(obj)	G_TYPE_CHECK_INSTANCE_CAST((obj), rvtk_view_finder_get_type(), RvtkViewFinder const)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RvtkViewFinderPrivate"></a><h3>RvtkViewFinderPrivate</h3>
+<pre class="programlisting">typedef struct _RvtkViewFinderPrivate RvtkViewFinderPrivate;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RvtkViewFinder-struct"></a><h3>RvtkViewFinder</h3>
+<pre class="programlisting">typedef struct _RvtkViewFinder RvtkViewFinder;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-view-finder-new"></a><h3>rvtk_view_finder_new ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a>*          rvtk_view_finder_new                (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-view-finder-set-size"></a><h3>rvtk_view_finder_set_size ()</h3>
+<pre class="programlisting">void                rvtk_view_finder_set_size           (<a class="link" href="RvtkViewFinder.html" title="RvtkViewFinder">RvtkViewFinder</a> *self,
+                                                         int width,
+                                                         int height);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-view-finder-get-size"></a><h3>rvtk_view_finder_get_size ()</h3>
+<pre class="programlisting">void                rvtk_view_finder_get_size           (<a class="link" href="RvtkViewFinder.html" title="RvtkViewFinder">RvtkViewFinder</a> *self,
+                                                         int *width,
+                                                         int *height);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-view-finder-get-view-region"></a><h3>rvtk_view_finder_get_view_region ()</h3>
+<pre class="programlisting">void                rvtk_view_finder_get_view_region    (<a class="link" href="RvtkViewFinder.html" title="RvtkViewFinder">RvtkViewFinder</a> *self,
+                                                         int *x,
+                                                         int *y,
+                                                         int *width,
+                                                         int *height);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-view-finder-copy-area-from-canvas"></a><h3>rvtk_view_finder_copy_area_from_canvas ()</h3>
+<pre class="programlisting">void                rvtk_view_finder_copy_area_from_canvas
+                                                        (<a class="link" href="RvtkViewFinder.html" title="RvtkViewFinder">RvtkViewFinder</a> *self,
+                                                         <a class="link" href="RvtkCanvas.html" title="RvtkCanvas">RvtkCanvas</a> *canvas,
+                                                         <a
+href="/usr/share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf.html#GdkPixbuf"
+>GdkPixbuf</a> *pixbuf);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>canvas</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pixbuf</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RVTK-VIEW-FINDER-PROP-WIDTH:CAPS"></a><h3>RVTK_VIEW_FINDER_PROP_WIDTH()</h3>
+<pre class="programlisting">#define             RVTK_VIEW_FINDER_PROP_WIDTH(arg)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>arg</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RVTK-VIEW-FINDER-GET-PROP-WIDTH:CAPS"></a><h3>RVTK_VIEW_FINDER_GET_PROP_WIDTH()</h3>
+<pre class="programlisting">#define             RVTK_VIEW_FINDER_GET_PROP_WIDTH(arg)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>arg</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RVTK-VIEW-FINDER-PROP-HEIGHT:CAPS"></a><h3>RVTK_VIEW_FINDER_PROP_HEIGHT()</h3>
+<pre class="programlisting">#define             RVTK_VIEW_FINDER_PROP_HEIGHT(arg)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>arg</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RVTK-VIEW-FINDER-GET-PROP-HEIGHT:CAPS"></a><h3>RVTK_VIEW_FINDER_GET_PROP_HEIGHT()</h3>
+<pre class="programlisting">#define             RVTK_VIEW_FINDER_GET_PROP_HEIGHT(arg)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>arg</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkViewFinder.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" lang="en">
+<a name="RvtkViewFinder--height"></a><h3>The <code class="literal">"height"</code> property</h3>
+<pre class="programlisting">  "height"                   gint                  : Read / Write</pre>
+<p>height.</p>
+<p>Default value: 40</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RvtkViewFinder--width"></a><h3>The <code class="literal">"width"</code> property</h3>
+<pre class="programlisting">  "width"                    gint                  : Read / Write</pre>
+<p>width.</p>
+<p>Default value: 40</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.10</div>
+</body>
+</html>

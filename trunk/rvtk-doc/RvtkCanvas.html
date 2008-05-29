@@ -1,0 +1,735 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RvtkCanvas</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Rvtk Reference Manual">
+<link rel="up" href="ch02.html" title="Rvtk Widgets">
+<link rel="prev" href="RvtkVideoTuning.html" title="RvtkVideoTuning">
+<link rel="next" href="RvtkGridPoints.html" title="RvtkGridPoints">
+<meta name="generator" content="GTK-Doc V1.10 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="Rvtk Core">
+<link rel="chapter" href="ch02.html" title="Rvtk Widgets">
+<link rel="chapter" href="ch03.html" title="libv4l2">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RvtkVideoTuning.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rvtk Reference Manual</th>
+<td><a accesskey="n" href="RvtkGridPoints.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#RvtkCanvas.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RvtkCanvas.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RvtkCanvas.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RvtkCanvas.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#RvtkCanvas.properties" class="shortcut">Properties</a>
+                   | 
+                  <a href="#RvtkCanvas.signals" class="shortcut">Signals</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="RvtkCanvas"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RvtkCanvas.top_of_page"></a>RvtkCanvas</span></h2>
+<p>RvtkCanvas</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RvtkCanvas.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a class="link" href="RvtkCanvas.html#RVTK-CANVAS-CONST:CAPS" title="RVTK_CANVAS_CONST()">RVTK_CANVAS_CONST</a>                   (obj)
+                    <a class="link" href="RvtkCanvas.html#RvtkCanvasPrivate" title="RvtkCanvasPrivate">RvtkCanvasPrivate</a>;
+                    <a class="link" href="RvtkCanvas.html#RvtkCanvas-struct" title="RvtkCanvas">RvtkCanvas</a>;
+void                <a class="link" href="RvtkCanvas.html#rvtk-canvas-frame-size-changed" title="rvtk_canvas_frame_size_changed ()">rvtk_canvas_frame_size_changed</a>      (<a class="link" href="RvtkCanvas.html" title="RvtkCanvas">RvtkCanvas</a> *self,
+                                                         int old_frame_width,
+                                                         int old_frame_height,
+                                                         int new_frame_width,
+                                                         int new_frame_height);
+<a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a>*          <a class="link" href="RvtkCanvas.html#rvtk-canvas-new" title="rvtk_canvas_new ()">rvtk_canvas_new</a>                     (void);
+void                <a class="link" href="RvtkCanvas.html#rvtk-canvas-draw-pixbuf" title="rvtk_canvas_draw_pixbuf ()">rvtk_canvas_draw_pixbuf</a>             (<a class="link" href="RvtkCanvas.html" title="RvtkCanvas">RvtkCanvas</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf.html#GdkPixbuf"
+>GdkPixbuf</a> *pixbuf);
+int                 <a class="link" href="RvtkCanvas.html#rvtk-canvas-draw-frame" title="rvtk_canvas_draw_frame ()">rvtk_canvas_draw_frame</a>              (<a class="link" href="RvtkCanvas.html" title="RvtkCanvas">RvtkCanvas</a> *self,
+                                                         <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);
+void                <a class="link" href="RvtkCanvas.html#rvtk-canvas-copy-area" title="rvtk_canvas_copy_area ()">rvtk_canvas_copy_area</a>               (<a class="link" href="RvtkCanvas.html" title="RvtkCanvas">RvtkCanvas</a> *self,
+                                                         int src_x,
+                                                         int src_y,
+                                                         int src_width,
+                                                         int src_height,
+                                                         <a
+href="/usr/share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf.html#GdkPixbuf"
+>GdkPixbuf</a> *dest_pixbuf,
+                                                         int dest_x,
+                                                         int dest_y);
+void                <a class="link" href="RvtkCanvas.html#rvtk-canvas-put" title="rvtk_canvas_put ()">rvtk_canvas_put</a>                     (<a class="link" href="RvtkCanvas.html" title="RvtkCanvas">RvtkCanvas</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a> *widget,
+                                                         gint x,
+                                                         gint y);
+void                <a class="link" href="RvtkCanvas.html#rvtk-canvas-move" title="rvtk_canvas_move ()">rvtk_canvas_move</a>                    (<a class="link" href="RvtkCanvas.html" title="RvtkCanvas">RvtkCanvas</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a> *widget,
+                                                         gint x,
+                                                         gint y);
+#define             <a class="link" href="RvtkCanvas.html#rvtk-canvas-connect--frame-size-changed" title="rvtk_canvas_connect__frame_size_changed()">rvtk_canvas_connect__frame_size_changed</a>(object,func,data)
+#define             <a class="link" href="RvtkCanvas.html#rvtk-canvas-connect-after--frame-size-changed" title="rvtk_canvas_connect_after__frame_size_changed()">rvtk_canvas_connect_after__frame_size_changed</a>(object,func,data)
+#define             <a class="link" href="RvtkCanvas.html#rvtk-canvas-connect-data--frame-size-changed" title="rvtk_canvas_connect_data__frame_size_changed()">rvtk_canvas_connect_data__frame_size_changed</a>(object,func,data,destroy_data,flags)
+#define             <a class="link" href="RvtkCanvas.html#RVTK-CANVAS-PROP-SCALABLE:CAPS" title="RVTK_CANVAS_PROP_SCALABLE()">RVTK_CANVAS_PROP_SCALABLE</a>           (arg)
+#define             <a class="link" href="RvtkCanvas.html#RVTK-CANVAS-GET-PROP-SCALABLE:CAPS" title="RVTK_CANVAS_GET_PROP_SCALABLE()">RVTK_CANVAS_GET_PROP_SCALABLE</a>       (arg)
+#define             <a class="link" href="RvtkCanvas.html#RVTK-CANVAS-PROP-FRAME-WIDTH:CAPS" title="RVTK_CANVAS_PROP_FRAME_WIDTH()">RVTK_CANVAS_PROP_FRAME_WIDTH</a>        (arg)
+#define             <a class="link" href="RvtkCanvas.html#RVTK-CANVAS-GET-PROP-FRAME-WIDTH:CAPS" title="RVTK_CANVAS_GET_PROP_FRAME_WIDTH()">RVTK_CANVAS_GET_PROP_FRAME_WIDTH</a>    (arg)
+#define             <a class="link" href="RvtkCanvas.html#RVTK-CANVAS-PROP-FRAME-HEIGHT:CAPS" title="RVTK_CANVAS_PROP_FRAME_HEIGHT()">RVTK_CANVAS_PROP_FRAME_HEIGHT</a>       (arg)
+#define             <a class="link" href="RvtkCanvas.html#RVTK-CANVAS-GET-PROP-FRAME-HEIGHT:CAPS" title="RVTK_CANVAS_GET_PROP_FRAME_HEIGHT()">RVTK_CANVAS_GET_PROP_FRAME_HEIGHT</a>   (arg)
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkCanvas.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkObject.html"
+>GtkObject</a>
+               +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a>
+                     +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkContainer.html"
+>GtkContainer</a>
+                           +----RvtkCanvas
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkCanvas.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RvtkCanvas implements
+ AtkImplementorIface and  <a
+href="/usr/share/gtk-doc/html/gtk/gtk-gtkbuildable.html#GtkBuildable"
+>GtkBuildable</a>.</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkCanvas.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="RvtkCanvas.html#RvtkCanvas--frame-height" title='The "frame-height" property'>frame-height</a>"             gint                  : Read / Write
+  "<a class="link" href="RvtkCanvas.html#RvtkCanvas--frame-width" title='The "frame-width" property'>frame-width</a>"              gint                  : Read / Write
+  "<a class="link" href="RvtkCanvas.html#RvtkCanvas--scalable" title='The "scalable" property'>scalable</a>"                 gint                  : Read / Write
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkCanvas.signals"></a><h2>Signals</h2>
+<pre class="synopsis">
+  "<a class="link" href="RvtkCanvas.html#RvtkCanvas-frame-size-changed" title='The "frame-size-changed" signal'>frame-size-changed</a>"                             : Run First / Action
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkCanvas.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkCanvas.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="RVTK-CANVAS-CONST:CAPS"></a><h3>RVTK_CANVAS_CONST()</h3>
+<pre class="programlisting">#define RVTK_CANVAS_CONST(obj)	G_TYPE_CHECK_INSTANCE_CAST((obj), rvtk_canvas_get_type(), RvtkCanvas const)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RvtkCanvasPrivate"></a><h3>RvtkCanvasPrivate</h3>
+<pre class="programlisting">typedef struct _RvtkCanvasPrivate RvtkCanvasPrivate;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RvtkCanvas-struct"></a><h3>RvtkCanvas</h3>
+<pre class="programlisting">typedef struct _RvtkCanvas RvtkCanvas;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-canvas-frame-size-changed"></a><h3>rvtk_canvas_frame_size_changed ()</h3>
+<pre class="programlisting">void                rvtk_canvas_frame_size_changed      (<a class="link" href="RvtkCanvas.html" title="RvtkCanvas">RvtkCanvas</a> *self,
+                                                         int old_frame_width,
+                                                         int old_frame_height,
+                                                         int new_frame_width,
+                                                         int new_frame_height);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>old_frame_width</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>old_frame_height</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>new_frame_width</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>new_frame_height</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-canvas-new"></a><h3>rvtk_canvas_new ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a>*          rvtk_canvas_new                     (void);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-canvas-draw-pixbuf"></a><h3>rvtk_canvas_draw_pixbuf ()</h3>
+<pre class="programlisting">void                rvtk_canvas_draw_pixbuf             (<a class="link" href="RvtkCanvas.html" title="RvtkCanvas">RvtkCanvas</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf.html#GdkPixbuf"
+>GdkPixbuf</a> *pixbuf);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>pixbuf</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-canvas-draw-frame"></a><h3>rvtk_canvas_draw_frame ()</h3>
+<pre class="programlisting">int                 rvtk_canvas_draw_frame              (<a class="link" href="RvtkCanvas.html" title="RvtkCanvas">RvtkCanvas</a> *self,
+                                                         <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);</pre>
+<p>
+Draw a frame on the canvas.</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td> A RvtkCanvas Object
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td> The VidFrame object to br drawn
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> Non-zero value to indicate error 
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-canvas-copy-area"></a><h3>rvtk_canvas_copy_area ()</h3>
+<pre class="programlisting">void                rvtk_canvas_copy_area               (<a class="link" href="RvtkCanvas.html" title="RvtkCanvas">RvtkCanvas</a> *self,
+                                                         int src_x,
+                                                         int src_y,
+                                                         int src_width,
+                                                         int src_height,
+                                                         <a
+href="/usr/share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf.html#GdkPixbuf"
+>GdkPixbuf</a> *dest_pixbuf,
+                                                         int dest_x,
+                                                         int dest_y);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src_x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src_y</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src_width</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src_height</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest_pixbuf</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest_x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest_y</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-canvas-put"></a><h3>rvtk_canvas_put ()</h3>
+<pre class="programlisting">void                rvtk_canvas_put                     (<a class="link" href="RvtkCanvas.html" title="RvtkCanvas">RvtkCanvas</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a> *widget,
+                                                         gint x,
+                                                         gint y);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-canvas-move"></a><h3>rvtk_canvas_move ()</h3>
+<pre class="programlisting">void                rvtk_canvas_move                    (<a class="link" href="RvtkCanvas.html" title="RvtkCanvas">RvtkCanvas</a> *self,
+                                                         <a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a> *widget,
+                                                         gint x,
+                                                         gint y);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>widget</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-canvas-connect--frame-size-changed"></a><h3>rvtk_canvas_connect__frame_size_changed()</h3>
+<pre class="programlisting">#define             rvtk_canvas_connect__frame_size_changed(object,func,data)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-canvas-connect-after--frame-size-changed"></a><h3>rvtk_canvas_connect_after__frame_size_changed()</h3>
+<pre class="programlisting">#define             rvtk_canvas_connect_after__frame_size_changed(object,func,data)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-canvas-connect-data--frame-size-changed"></a><h3>rvtk_canvas_connect_data__frame_size_changed()</h3>
+<pre class="programlisting">#define             rvtk_canvas_connect_data__frame_size_changed(object,func,data,destroy_data,flags)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>object</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>func</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>destroy_data</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>flags</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RVTK-CANVAS-PROP-SCALABLE:CAPS"></a><h3>RVTK_CANVAS_PROP_SCALABLE()</h3>
+<pre class="programlisting">#define             RVTK_CANVAS_PROP_SCALABLE(arg)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>arg</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RVTK-CANVAS-GET-PROP-SCALABLE:CAPS"></a><h3>RVTK_CANVAS_GET_PROP_SCALABLE()</h3>
+<pre class="programlisting">#define             RVTK_CANVAS_GET_PROP_SCALABLE(arg)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>arg</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RVTK-CANVAS-PROP-FRAME-WIDTH:CAPS"></a><h3>RVTK_CANVAS_PROP_FRAME_WIDTH()</h3>
+<pre class="programlisting">#define             RVTK_CANVAS_PROP_FRAME_WIDTH(arg)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>arg</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RVTK-CANVAS-GET-PROP-FRAME-WIDTH:CAPS"></a><h3>RVTK_CANVAS_GET_PROP_FRAME_WIDTH()</h3>
+<pre class="programlisting">#define             RVTK_CANVAS_GET_PROP_FRAME_WIDTH(arg)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>arg</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RVTK-CANVAS-PROP-FRAME-HEIGHT:CAPS"></a><h3>RVTK_CANVAS_PROP_FRAME_HEIGHT()</h3>
+<pre class="programlisting">#define             RVTK_CANVAS_PROP_FRAME_HEIGHT(arg)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>arg</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RVTK-CANVAS-GET-PROP-FRAME-HEIGHT:CAPS"></a><h3>RVTK_CANVAS_GET_PROP_FRAME_HEIGHT()</h3>
+<pre class="programlisting">#define             RVTK_CANVAS_GET_PROP_FRAME_HEIGHT(arg)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>arg</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkCanvas.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" lang="en">
+<a name="RvtkCanvas--frame-height"></a><h3>The <code class="literal">"frame-height"</code> property</h3>
+<pre class="programlisting">  "frame-height"             gint                  : Read / Write</pre>
+<p>frame_height.</p>
+<p>Default value: 120</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RvtkCanvas--frame-width"></a><h3>The <code class="literal">"frame-width"</code> property</h3>
+<pre class="programlisting">  "frame-width"              gint                  : Read / Write</pre>
+<p>frame_width.</p>
+<p>Default value: 160</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RvtkCanvas--scalable"></a><h3>The <code class="literal">"scalable"</code> property</h3>
+<pre class="programlisting">  "scalable"                 gint                  : Read / Write</pre>
+<p>salable.</p>
+<p>Default value: 0</p>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkCanvas.signal-details"></a><h2>Signal Details</h2>
+<div class="refsect2" lang="en">
+<a name="RvtkCanvas-frame-size-changed"></a><h3>The <code class="literal">"frame-size-changed"</code> signal</h3>
+<pre class="programlisting">void                user_function                      (<a class="link" href="RvtkCanvas.html" title="RvtkCanvas">RvtkCanvas</a> *rvtkcanvas,
+                                                        gint        arg1,
+                                                        gint        arg2,
+                                                        gint        arg3,
+                                                        gint        arg4,
+                                                        gpointer    user_data)       : Run First / Action</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>rvtkcanvas</code></em> :</span></p></td>
+<td>the object which received the signal.
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg1</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg2</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg3</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>arg4</code></em> :</span></p></td>
+<td>
+
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
+<td>user data set when the signal handler was connected.</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.10</div>
+</body>
+</html>

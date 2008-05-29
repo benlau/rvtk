@@ -1,0 +1,680 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>frame</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Rvtk Reference Manual">
+<link rel="up" href="ch03.html" title="libv4l2">
+<link rel="prev" href="rvtk-fourcc.html" title="fourcc">
+<link rel="next" href="rvtk-utils.html" title="utils">
+<meta name="generator" content="GTK-Doc V1.10 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="Rvtk Core">
+<link rel="chapter" href="ch02.html" title="Rvtk Widgets">
+<link rel="chapter" href="ch03.html" title="libv4l2">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="rvtk-fourcc.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch03.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rvtk Reference Manual</th>
+<td><a accesskey="n" href="rvtk-utils.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#rvtk-frame.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#rvtk-frame.description" class="shortcut">Description</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="rvtk-frame"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="rvtk-frame.top_of_page"></a>frame</span></h2>
+<p>frame — Video Frame</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="rvtk-frame.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+
+#include &lt;rvtk/v4l2.h&gt;
+
+                    <a class="link" href="rvtk-frame.html#VidSize" title="VidSize">VidSize</a>;
+                    <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a>;
+<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a>*           <a class="link" href="rvtk-frame.html#vidFrameCreate" title="vidFrameCreate ()">vidFrameCreate</a>                      ();
+void                <a class="link" href="rvtk-frame.html#vidFrameRef" title="vidFrameRef ()">vidFrameRef</a>                         (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);
+void                <a class="link" href="rvtk-frame.html#vidFrameUnref" title="vidFrameUnref ()">vidFrameUnref</a>                       (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> **frame);
+void                <a class="link" href="rvtk-frame.html#vidFrameRelease" title="vidFrameRelease ()">vidFrameRelease</a>                     (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> **frame);
+void                <a class="link" href="rvtk-frame.html#vidFrameModify" title="vidFrameModify ()">vidFrameModify</a>                      (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> **frame);
+void                <a class="link" href="rvtk-frame.html#vidFrameCache" title="vidFrameCache ()">vidFrameCache</a>                       (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> **frame);
+int                 <a class="link" href="rvtk-frame.html#vidFrameChangeFormat" title="vidFrameChangeFormat ()">vidFrameChangeFormat</a>                (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame,
+                                                         <a class="link" href="rvtk-fourcc.html#fourcc-t" title="fourcc_t">fourcc_t</a> format,
+                                                         int width,
+                                                         int height);
+int                 <a class="link" href="rvtk-frame.html#vidFrameGetWidth" title="vidFrameGetWidth ()">vidFrameGetWidth</a>                    (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);
+int                 <a class="link" href="rvtk-frame.html#vidFrameGetHeight" title="vidFrameGetHeight ()">vidFrameGetHeight</a>                   (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);
+int                 <a class="link" href="rvtk-frame.html#vidFrameGetImageLength" title="vidFrameGetImageLength ()">vidFrameGetImageLength</a>              (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);
+int                 <a class="link" href="rvtk-frame.html#vidFrameGetBufferLength" title="vidFrameGetBufferLength ()">vidFrameGetBufferLength</a>             (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);
+unsigned char*      <a class="link" href="rvtk-frame.html#vidFrameGetImageData" title="vidFrameGetImageData ()">vidFrameGetImageData</a>                (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);
+<a class="link" href="rvtk-fourcc.html#fourcc-t" title="fourcc_t">fourcc_t</a>            <a class="link" href="rvtk-frame.html#vidFrameGetFormat" title="vidFrameGetFormat ()">vidFrameGetFormat</a>                   (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);
+int                 <a class="link" href="rvtk-frame.html#vidFrameResizeBuffer" title="vidFrameResizeBuffer ()">vidFrameResizeBuffer</a>                (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame,
+                                                         int length);
+int                 <a class="link" href="rvtk-frame.html#vidFrameGetRowStride" title="vidFrameGetRowStride ()">vidFrameGetRowStride</a>                (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);
+void                <a class="link" href="rvtk-frame.html#vidFrameCopy" title="vidFrameCopy ()">vidFrameCopy</a>                        (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *src,
+                                                         <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *dest,
+                                                         int deep);
+<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a>*           <a class="link" href="rvtk-frame.html#vidFrameClone" title="vidFrameClone ()">vidFrameClone</a>                       (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);
+int                 (<a class="link" href="rvtk-frame.html#v4l2ConvFunc" title="v4l2ConvFunc ()">*v4l2ConvFunc</a>)                     (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *src,
+                                                         <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *dest);
+                    <a class="link" href="rvtk-frame.html#VidConv" title="VidConv">VidConv</a>;
+<a class="link" href="rvtk-frame.html#VidConv" title="VidConv">VidConv</a>*            <a class="link" href="rvtk-frame.html#vidConvFind" title="vidConvFind ()">vidConvFind</a>                         (<a class="link" href="rvtk-fourcc.html#fourcc-t" title="fourcc_t">fourcc_t</a> input,
+                                                         <a class="link" href="rvtk-fourcc.html#fourcc-t" title="fourcc_t">fourcc_t</a> output);
+int                 <a class="link" href="rvtk-frame.html#vidConvProcess" title="vidConvProcess ()">vidConvProcess</a>                      (<a class="link" href="rvtk-frame.html#VidConv" title="VidConv">VidConv</a> *conv,
+                                                         <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *src,
+                                                         <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *dest);
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="rvtk-frame.description"></a><h2>Description</h2>
+<p>
+Video Frame</p>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="rvtk-frame.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="VidSize"></a><h3>VidSize</h3>
+<pre class="programlisting">typedef struct {
+	/// The width 
+	int width;
+	/// The height
+	int height;
+} VidSize;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="VidFrame"></a><h3>VidFrame</h3>
+<pre class="programlisting">typedef struct {
+	/// A frame may be named.
+	char *name;
+	
+	/// A read only frame is used togather with mmap operation. 
+	int readonly;
+	
+	/// The size of frame
+	VidSize size;	
+
+	/// The image type(fourcc) 
+	fourcc_t format;
+	
+	/// Row stride
+	int bytesperline;
+	
+	/// Excepted image size of current format. 
+	int imagesize;
+	
+	/// The size of data/buffer allocated to hold image. It should be larger than or equal to imagesize
+	int buflen; 
+	
+	/// Pointer to image data.
+	unsigned char *data;
+	
+	/// the last modified time.
+	struct timeval	timestamp;
+	
+	/// refcount
+	int refcount;
+} VidFrame;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidFrameCreate"></a><h3>vidFrameCreate ()</h3>
+<pre class="programlisting"><a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a>*           vidFrameCreate                      ();</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidFrameRef"></a><h3>vidFrameRef ()</h3>
+<pre class="programlisting">void                vidFrameRef                         (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidFrameUnref"></a><h3>vidFrameUnref ()</h3>
+<pre class="programlisting">void                vidFrameUnref                       (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> **frame);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidFrameRelease"></a><h3>vidFrameRelease ()</h3>
+<pre class="programlisting">void                vidFrameRelease                     (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> **frame);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidFrameModify"></a><h3>vidFrameModify ()</h3>
+<pre class="programlisting">void                vidFrameModify                      (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> **frame);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidFrameCache"></a><h3>vidFrameCache ()</h3>
+<pre class="programlisting">void                vidFrameCache                       (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> **frame);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidFrameChangeFormat"></a><h3>vidFrameChangeFormat ()</h3>
+<pre class="programlisting">int                 vidFrameChangeFormat                (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame,
+                                                         <a class="link" href="rvtk-fourcc.html#fourcc-t" title="fourcc_t">fourcc_t</a> format,
+                                                         int width,
+                                                         int height);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>format</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>width</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>height</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidFrameGetWidth"></a><h3>vidFrameGetWidth ()</h3>
+<pre class="programlisting">int                 vidFrameGetWidth                    (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidFrameGetHeight"></a><h3>vidFrameGetHeight ()</h3>
+<pre class="programlisting">int                 vidFrameGetHeight                   (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidFrameGetImageLength"></a><h3>vidFrameGetImageLength ()</h3>
+<pre class="programlisting">int                 vidFrameGetImageLength              (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidFrameGetBufferLength"></a><h3>vidFrameGetBufferLength ()</h3>
+<pre class="programlisting">int                 vidFrameGetBufferLength             (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidFrameGetImageData"></a><h3>vidFrameGetImageData ()</h3>
+<pre class="programlisting">unsigned char*      vidFrameGetImageData                (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidFrameGetFormat"></a><h3>vidFrameGetFormat ()</h3>
+<pre class="programlisting"><a class="link" href="rvtk-fourcc.html#fourcc-t" title="fourcc_t">fourcc_t</a>            vidFrameGetFormat                   (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidFrameResizeBuffer"></a><h3>vidFrameResizeBuffer ()</h3>
+<pre class="programlisting">int                 vidFrameResizeBuffer                (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame,
+                                                         int length);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>length</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidFrameGetRowStride"></a><h3>vidFrameGetRowStride ()</h3>
+<pre class="programlisting">int                 vidFrameGetRowStride                (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidFrameCopy"></a><h3>vidFrameCopy ()</h3>
+<pre class="programlisting">void                vidFrameCopy                        (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *src,
+                                                         <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *dest,
+                                                         int deep);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>deep</code></em> :</span></p></td>
+<td> Perform a deep copy. If FALSE, it will simply allocate a buffer without copy the data.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidFrameClone"></a><h3>vidFrameClone ()</h3>
+<pre class="programlisting"><a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a>*           vidFrameClone                       (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *frame);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>frame</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td> A cloned frame with refcount equal to 1.
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="v4l2ConvFunc"></a><h3>v4l2ConvFunc ()</h3>
+<pre class="programlisting">int                 (*v4l2ConvFunc)                     (<a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *src,
+                                                         <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *dest);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="VidConv"></a><h3>VidConv</h3>
+<pre class="programlisting">typedef struct {
+	/// Name of the converter
+	char *name;
+	/// The input image format(fourcc)
+	fourcc_t input;
+	/// The output image format(fourcc))
+	fourcc_t output;
+	
+	/// The callback function to handle the convertion
+	v4l2ConvFunc convert;	
+} VidConv;
+</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidConvFind"></a><h3>vidConvFind ()</h3>
+<pre class="programlisting"><a class="link" href="rvtk-frame.html#VidConv" title="VidConv">VidConv</a>*            vidConvFind                         (<a class="link" href="rvtk-fourcc.html#fourcc-t" title="fourcc_t">fourcc_t</a> input,
+                                                         <a class="link" href="rvtk-fourcc.html#fourcc-t" title="fourcc_t">fourcc_t</a> output);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>input</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>output</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="vidConvProcess"></a><h3>vidConvProcess ()</h3>
+<pre class="programlisting">int                 vidConvProcess                      (<a class="link" href="rvtk-frame.html#VidConv" title="VidConv">VidConv</a> *conv,
+                                                         <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *src,
+                                                         <a class="link" href="rvtk-frame.html#VidFrame" title="VidFrame">VidFrame</a> *dest);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>conv</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>src</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>dest</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.10</div>
+</body>
+</html>

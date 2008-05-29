@@ -1,0 +1,440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>RvtkGridPoints</title>
+<meta name="generator" content="DocBook XSL Stylesheets V1.73.2">
+<link rel="start" href="index.html" title="Rvtk Reference Manual">
+<link rel="up" href="ch02.html" title="Rvtk Widgets">
+<link rel="prev" href="RvtkCanvas.html" title="RvtkCanvas">
+<link rel="next" href="RvtkViewFinder.html" title="RvtkViewFinder">
+<meta name="generator" content="GTK-Doc V1.10 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+<link rel="chapter" href="ch01.html" title="Rvtk Core">
+<link rel="chapter" href="ch02.html" title="Rvtk Widgets">
+<link rel="chapter" href="ch03.html" title="libv4l2">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
+<tr valign="middle">
+<td><a accesskey="p" href="RvtkCanvas.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
+<td><a accesskey="u" href="ch02.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
+<th width="100%" align="center">Rvtk Reference Manual</th>
+<td><a accesskey="n" href="RvtkViewFinder.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
+</tr>
+<tr><td colspan="5" class="shortcuts"><nobr><a href="#RvtkGridPoints.synopsis" class="shortcut">Top</a>
+                   | 
+                  <a href="#RvtkGridPoints.description" class="shortcut">Description</a>
+                   | 
+                  <a href="#RvtkGridPoints.object-hierarchy" class="shortcut">Object Hierarchy</a>
+                   | 
+                  <a href="#RvtkGridPoints.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
+                   | 
+                  <a href="#RvtkGridPoints.properties" class="shortcut">Properties</a></nobr></td></tr>
+</table>
+<div class="refentry" lang="en">
+<a name="RvtkGridPoints"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="RvtkGridPoints.top_of_page"></a>RvtkGridPoints</span></h2>
+<p>RvtkGridPoints</p>
+</td>
+<td valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsynopsisdiv">
+<a name="RvtkGridPoints.synopsis"></a><h2>Synopsis</h2>
+<pre class="synopsis">
+#define             <a class="link" href="RvtkGridPoints.html#RVTK-GRID-POINTS-CONST:CAPS" title="RVTK_GRID_POINTS_CONST()">RVTK_GRID_POINTS_CONST</a>              (obj)
+                    <a class="link" href="RvtkGridPoints.html#RvtkGridPointsPrivate" title="RvtkGridPointsPrivate">RvtkGridPointsPrivate</a>;
+                    <a class="link" href="RvtkGridPoints.html#RvtkGridPoints-struct" title="RvtkGridPoints">RvtkGridPoints</a>;
+<a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a>*          <a class="link" href="RvtkGridPoints.html#rvtk-grid-points-new" title="rvtk_grid_points_new ()">rvtk_grid_points_new</a>                (guint gridpoint);
+void                <a class="link" href="RvtkGridPoints.html#rvtk-grid-points-unref" title="rvtk_grid_points_unref ()">rvtk_grid_points_unref</a>              (<a class="link" href="RvtkGridPoints.html" title="RvtkGridPoints">RvtkGridPoints</a> *self);
+void                <a class="link" href="RvtkGridPoints.html#rvtk-grid-points-set-grid-point" title="rvtk_grid_points_set_grid_point ()">rvtk_grid_points_set_grid_point</a>     (<a class="link" href="RvtkGridPoints.html" title="RvtkGridPoints">RvtkGridPoints</a> *self,
+                                                         guint index,
+                                                         gfloat x,
+                                                         gfloat y);
+int                 <a class="link" href="RvtkGridPoints.html#rvtk-grid-points-get-active-point" title="rvtk_grid_points_get_active_point ()">rvtk_grid_points_get_active_point</a>   (<a class="link" href="RvtkGridPoints.html" title="RvtkGridPoints">RvtkGridPoints</a> *self);
+void                <a class="link" href="RvtkGridPoints.html#rvtk-grid-points-set-active-point" title="rvtk_grid_points_set_active_point ()">rvtk_grid_points_set_active_point</a>   (<a class="link" href="RvtkGridPoints.html" title="RvtkGridPoints">RvtkGridPoints</a> *self,
+                                                         int new_val);
+void                <a class="link" href="RvtkGridPoints.html#rvtk-grid-points-next-active-point" title="rvtk_grid_points_next_active_point ()">rvtk_grid_points_next_active_point</a>  (<a class="link" href="RvtkGridPoints.html" title="RvtkGridPoints">RvtkGridPoints</a> *self);
+void                <a class="link" href="RvtkGridPoints.html#rvtk-grid-points-revert-active-point" title="rvtk_grid_points_revert_active_point ()">rvtk_grid_points_revert_active_point</a>
+                                                        (<a class="link" href="RvtkGridPoints.html" title="RvtkGridPoints">RvtkGridPoints</a> *self);
+void                <a class="link" href="RvtkGridPoints.html#rvtk-grid-points-set-highlight" title="rvtk_grid_points_set_highlight ()">rvtk_grid_points_set_highlight</a>      (<a class="link" href="RvtkGridPoints.html" title="RvtkGridPoints">RvtkGridPoints</a> *self,
+                                                         gboolean status);
+#define             <a class="link" href="RvtkGridPoints.html#RVTK-GRID-POINTS-PROP-GRID-POINT:CAPS" title="RVTK_GRID_POINTS_PROP_GRID_POINT()">RVTK_GRID_POINTS_PROP_GRID_POINT</a>    (arg)
+#define             <a class="link" href="RvtkGridPoints.html#RVTK-GRID-POINTS-GET-PROP-GRID-POINT:CAPS" title="RVTK_GRID_POINTS_GET_PROP_GRID_POINT()">RVTK_GRID_POINTS_GET_PROP_GRID_POINT</a>(arg)
+#define             <a class="link" href="RvtkGridPoints.html#RVTK-GRID-POINTS-PROP-ACTIVE-POINT:CAPS" title="RVTK_GRID_POINTS_PROP_ACTIVE_POINT()">RVTK_GRID_POINTS_PROP_ACTIVE_POINT</a>  (arg)
+#define             <a class="link" href="RvtkGridPoints.html#RVTK-GRID-POINTS-GET-PROP-ACTIVE-POINT:CAPS" title="RVTK_GRID_POINTS_GET_PROP_ACTIVE_POINT()">RVTK_GRID_POINTS_GET_PROP_ACTIVE_POINT</a>(arg)
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkGridPoints.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="synopsis">
+  GObject
+   +----GInitiallyUnowned
+         +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkObject.html"
+>GtkObject</a>
+               +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a>
+                     +----<a
+href="/usr/share/gtk-doc/html/gtk/GtkDrawingArea.html"
+>GtkDrawingArea</a>
+                           +----RvtkGridPoints
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkGridPoints.implemented-interfaces"></a><h2>Implemented Interfaces</h2>
+<p>
+RvtkGridPoints implements
+ AtkImplementorIface and  <a
+href="/usr/share/gtk-doc/html/gtk/gtk-gtkbuildable.html#GtkBuildable"
+>GtkBuildable</a>.</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkGridPoints.properties"></a><h2>Properties</h2>
+<pre class="synopsis">
+  "<a class="link" href="RvtkGridPoints.html#RvtkGridPoints--active-point" title='The "active-point" property'>active-point</a>"             gint                  : Read / Write
+  "<a class="link" href="RvtkGridPoints.html#RvtkGridPoints--grid-point" title='The "grid-point" property'>grid-point</a>"               gint                  : Read / Write / Construct Only
+</pre>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkGridPoints.description"></a><h2>Description</h2>
+<p>
+
+</p>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkGridPoints.details"></a><h2>Details</h2>
+<div class="refsect2" lang="en">
+<a name="RVTK-GRID-POINTS-CONST:CAPS"></a><h3>RVTK_GRID_POINTS_CONST()</h3>
+<pre class="programlisting">#define RVTK_GRID_POINTS_CONST(obj)	G_TYPE_CHECK_INSTANCE_CAST((obj), rvtk_grid_points_get_type(), RvtkGridPoints const)
+</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>obj</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RvtkGridPointsPrivate"></a><h3>RvtkGridPointsPrivate</h3>
+<pre class="programlisting">typedef struct _RvtkGridPointsPrivate RvtkGridPointsPrivate;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RvtkGridPoints-struct"></a><h3>RvtkGridPoints</h3>
+<pre class="programlisting">typedef struct _RvtkGridPoints RvtkGridPoints;</pre>
+<p>
+
+</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-grid-points-new"></a><h3>rvtk_grid_points_new ()</h3>
+<pre class="programlisting"><a
+href="/usr/share/gtk-doc/html/gtk/GtkWidget.html"
+>GtkWidget</a>*          rvtk_grid_points_new                (guint gridpoint);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>gridpoint</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-grid-points-unref"></a><h3>rvtk_grid_points_unref ()</h3>
+<pre class="programlisting">void                rvtk_grid_points_unref              (<a class="link" href="RvtkGridPoints.html" title="RvtkGridPoints">RvtkGridPoints</a> *self);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-grid-points-set-grid-point"></a><h3>rvtk_grid_points_set_grid_point ()</h3>
+<pre class="programlisting">void                rvtk_grid_points_set_grid_point     (<a class="link" href="RvtkGridPoints.html" title="RvtkGridPoints">RvtkGridPoints</a> *self,
+                                                         guint index,
+                                                         gfloat x,
+                                                         gfloat y);</pre>
+<p>
+</p>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td> The RvtkGridPoints widget
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>index</code></em> :</span></p></td>
+<td> The index number of grid point
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>x</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>y</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-grid-points-get-active-point"></a><h3>rvtk_grid_points_get_active_point ()</h3>
+<pre class="programlisting">int                 rvtk_grid_points_get_active_point   (<a class="link" href="RvtkGridPoints.html" title="RvtkGridPoints">RvtkGridPoints</a> *self);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-grid-points-set-active-point"></a><h3>rvtk_grid_points_set_active_point ()</h3>
+<pre class="programlisting">void                rvtk_grid_points_set_active_point   (<a class="link" href="RvtkGridPoints.html" title="RvtkGridPoints">RvtkGridPoints</a> *self,
+                                                         int new_val);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>new_val</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-grid-points-next-active-point"></a><h3>rvtk_grid_points_next_active_point ()</h3>
+<pre class="programlisting">void                rvtk_grid_points_next_active_point  (<a class="link" href="RvtkGridPoints.html" title="RvtkGridPoints">RvtkGridPoints</a> *self);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-grid-points-revert-active-point"></a><h3>rvtk_grid_points_revert_active_point ()</h3>
+<pre class="programlisting">void                rvtk_grid_points_revert_active_point
+                                                        (<a class="link" href="RvtkGridPoints.html" title="RvtkGridPoints">RvtkGridPoints</a> *self);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="rvtk-grid-points-set-highlight"></a><h3>rvtk_grid_points_set_highlight ()</h3>
+<pre class="programlisting">void                rvtk_grid_points_set_highlight      (<a class="link" href="RvtkGridPoints.html" title="RvtkGridPoints">RvtkGridPoints</a> *self,
+                                                         gboolean status);</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>self</code></em> :</span></p></td>
+<td>
+</td>
+</tr>
+<tr>
+<td><p><span class="term"><em class="parameter"><code>status</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RVTK-GRID-POINTS-PROP-GRID-POINT:CAPS"></a><h3>RVTK_GRID_POINTS_PROP_GRID_POINT()</h3>
+<pre class="programlisting">#define             RVTK_GRID_POINTS_PROP_GRID_POINT(arg)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>arg</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RVTK-GRID-POINTS-GET-PROP-GRID-POINT:CAPS"></a><h3>RVTK_GRID_POINTS_GET_PROP_GRID_POINT()</h3>
+<pre class="programlisting">#define             RVTK_GRID_POINTS_GET_PROP_GRID_POINT(arg)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>arg</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RVTK-GRID-POINTS-PROP-ACTIVE-POINT:CAPS"></a><h3>RVTK_GRID_POINTS_PROP_ACTIVE_POINT()</h3>
+<pre class="programlisting">#define             RVTK_GRID_POINTS_PROP_ACTIVE_POINT(arg)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>arg</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RVTK-GRID-POINTS-GET-PROP-ACTIVE-POINT:CAPS"></a><h3>RVTK_GRID_POINTS_GET_PROP_ACTIVE_POINT()</h3>
+<pre class="programlisting">#define             RVTK_GRID_POINTS_GET_PROP_ACTIVE_POINT(arg)</pre>
+<p>
+
+</p>
+<div class="variablelist"><table border="0">
+<col align="left" valign="top">
+<tbody><tr>
+<td><p><span class="term"><em class="parameter"><code>arg</code></em> :</span></p></td>
+<td>
+
+
+</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<div class="refsect1" lang="en">
+<a name="RvtkGridPoints.property-details"></a><h2>Property Details</h2>
+<div class="refsect2" lang="en">
+<a name="RvtkGridPoints--active-point"></a><h3>The <code class="literal">"active-point"</code> property</h3>
+<pre class="programlisting">  "active-point"             gint                  : Read / Write</pre>
+<p>active-point.</p>
+<p>Allowed values: &gt;= 0</p>
+<p>Default value: 0</p>
+</div>
+<hr>
+<div class="refsect2" lang="en">
+<a name="RvtkGridPoints--grid-point"></a><h3>The <code class="literal">"grid-point"</code> property</h3>
+<pre class="programlisting">  "grid-point"               gint                  : Read / Write / Construct Only</pre>
+<p>grid-point.</p>
+<p>Allowed values: &gt;= 0</p>
+<p>Default value: 0</p>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>
+          Generated by GTK-Doc V1.10</div>
+</body>
+</html>
